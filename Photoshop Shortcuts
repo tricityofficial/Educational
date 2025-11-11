@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Photoshop 2026 Shortcuts</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f7fa;
+    color: #333;
+    margin: 20px;
+  }
+  h1 {
+    text-align: center;
+    color: #0078d7;
+  }
+  details {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    margin: 10px 0;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  details[open] {
+    background: #e6f0fa;
+  }
+  summary {
+    font-size: 1.2rem;
+    font-weight: 600;
+    outline: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  summary::before {
+    content: '▶';
+    color: #0078d7;
+    display: inline-block;
+    margin-right: 8px;
+    transition: transform 0.2s ease;
+  }
+  details[open] summary::before {
+    transform: rotate(90deg);
+  }
+  .shortcut-list {
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+  }
+  .shortcut-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 6px 0;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #eee;
+  }
+  .command {
+    max-width: 70%;
+  }
+  .keys {
+    font-family: 'Courier New', Courier, monospace;
+    background: #0078d7;
+    color: white;
+    border-radius: 4px;
+    padding: 2px 6px;
+    margin-left: 10px;
+    white-space: nowrap;
+  }
+</style>
+</head>
+<body>
+<h1>Photoshop 2026 Shortcuts</h1>
+
+<details open>
+  <summary>General Shortcuts</summary>
+  <div class="shortcut-list">
+    <div class="shortcut-item"><div class="command">New File</div><div class="keys">Ctrl + N (Cmd + N)</div></div>
+    <div class="shortcut-item"><div class="command">Open File</div><div class="keys">Ctrl + O (Cmd + O)</div></div>
+    <div class="shortcut-item"><div class="command">Save File</div><div class="keys">Ctrl + S (Cmd + S)</div></div>
+    <div class="shortcut-item"><div class="command">Save As</div><div class="keys">Shift + Ctrl + S (Shift + Cmd + S)</div></div>
+    <div class="shortcut-item"><div class="command">Save for Web</div><div class="keys">Alt + Ctrl + S (Option + Cmd + S)</div></div>
+    <div class="shortcut-item"><div class="command">Print</div><div class="keys">Ctrl + P (Cmd + P)</div></div>
+    <div class="shortcut-item"><div class="command">Undo</div><div class="keys">Ctrl + Z (Cmd + Z)</div></div>
+    <div class="shortcut-item"><div class="command">Step Backward (multiple undos)</div><div class="keys">Ctrl + Alt + Z (Cmd + Option + Z)</div></div>
+    <div class="shortcut-item"><div class="command">Redo</div><div class="keys">Ctrl + Shift + Z (Cmd + Shift + Z)</div></div>
+    <div class="shortcut-item"><div class="command">Copy</div><div class="keys">Ctrl + C (Cmd + C)</div></div>
+    <div class="shortcut-item"><div class="command">Cut</div><div class="keys">Ctrl + X (Cmd + X)</div></div>
+    <div class="shortcut-item"><div class="command">Paste</div><div class="keys">Ctrl + V (Cmd + V)</div></div>
+    <div class="shortcut-item"><div class="command">Paste in Place</div><div class="keys">Shift + Ctrl + V (Shift + Cmd + V)</div></div>
+    <div class="shortcut-item"><div class="command">Select All</div><div class="keys">Ctrl + A (Cmd + A)</div></div>
+    <div class="shortcut-item"><div class="command">Deselect</div><div class="keys">Ctrl + D (Cmd + D)</div></div>
+    <div class="shortcut-item"><div class="command">Reselect</div><div class="keys">Shift + Ctrl + D (Shift + Cmd + D)</div></div>
+    <div class="shortcut-item"><div class="command">Feather Selection</div><div class="keys">Shift + F6</div></div>
+    <div class="shortcut-item"><div class="command">Fill</div><div class="keys">Shift + F5</div></div>
+    <div class="shortcut-item"><div class="command">Inverse Selection</div><div class="keys">Shift + Ctrl + I (Shift + Cmd + I)</div></div>
+    <div class="shortcut-item"><div class="command">Zoom In/Out</div><div class="keys">Ctrl + + / Ctrl + - (Cmd + + / Cmd + -)</div></div>
+    <div class="shortcut-item"><div class="command">Fit Screen</div><div class="keys">Ctrl + 0 (Cmd + 0)</div></div>
+    <div class="shortcut-item"><div class="command">Actual Pixels (100% Zoom)</div><div class="keys">Ctrl + 1 (Cmd + 1)</div></div>
+    <div class="shortcut-item"><div class="command">Toggle Screen Mode</div><div class="keys">F</div></div>
+  </div>
+</details>
+
+<!-- Additional categories can be added similarly -->
+
+</body>
+</html>
