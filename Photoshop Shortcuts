@@ -1,109 +1,258 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Photoshop 2026 Shortcuts</title>
-<style>
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f4f7fa;
-    color: #333;
-    margin: 20px;
-  }
-  h1 {
-    text-align: center;
-    color: #0078d7;
-  }
-  details {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
-    margin: 10px 0;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  details[open] {
-    background: #e6f0fa;
-  }
-  summary {
-    font-size: 1.2rem;
-    font-weight: 600;
-    outline: none;
-  }
-  summary::-webkit-details-marker {
-    display: none;
-  }
-  summary::before {
-    content: '▶';
-    color: #0078d7;
-    display: inline-block;
-    margin-right: 8px;
-    transition: transform 0.2s ease;
-  }
-  details[open] summary::before {
-    transform: rotate(90deg);
-  }
-  .shortcut-list {
-    margin-top: 10px;
-    border-top: 1px solid #ddd;
-    padding-top: 10px;
-  }
-  .shortcut-item {
-    display: flex;
-    justify-content: space-between;
-    margin: 6px 0;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #eee;
-  }
-  .command {
-    max-width: 70%;
-  }
-  .keys {
-    font-family: 'Courier New', Courier, monospace;
-    background: #0078d7;
-    color: white;
-    border-radius: 4px;
-    padding: 2px 6px;
-    margin-left: 10px;
-    white-space: nowrap;
-  }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Photoshop 2026 — Colorful Shortcut Cheat Sheet</title>
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa7b2; --accent1:#7c3aed; --accent2:#06b6d4; --accent3:#fb7185; --glass:rgba(255,255,255,0.03);
+      --radius:14px; --glass-2:rgba(255,255,255,0.02);
+      --sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    }
+    *{box-sizing:border-box}
+    body{font-family:var(--sans);margin:0;background:linear-gradient(180deg,#071026 0%, #081122 50%);color:#e6eef6;min-height:100vh}
+    .wrap{max-width:1200px;margin:40px auto;padding:28px}
+    header{display:flex;gap:20px;align-items:center;margin-bottom:18px}
+    .logo{width:72px;height:72px;border-radius:16px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 6px 30px rgba(10,12,20,0.6)}
+    .logo span{font-size:22px}
+    h1{font-size:28px;margin:0}
+    p.lead{color:var(--muted);margin:6px 0 0}
+
+    .controls{display:flex;gap:12px;margin-left:auto}
+    .toggle{background:var(--glass);padding:8px;border-radius:12px;display:flex;gap:6px;align-items:center}
+    .toggle button{background:transparent;border:0;color:var(--muted);padding:6px 10px;border-radius:8px;cursor:pointer}
+    .toggle button.active{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+    @media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){.grid{grid-template-columns:1fr}}
+
+    .card{background:linear-gradient(180deg,var(--card), #041126);padding:16px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+    .card h2{margin:0 0 8px;font-size:18px;display:flex;align-items:center;gap:10px}
+    .badge{padding:6px 10px;border-radius:999px;font-size:12px;background:var(--glass);color:var(--muted)}
+
+    ul.shortcut-list{list-style:none;padding:0;margin:8px 0 0;display:flex;flex-direction:column;gap:8px}
+    li.item{display:flex;justify-content:space-between;align-items:center;padding:8px;border-radius:10px;background:linear-gradient(90deg, rgba(255,255,255,0.01), transparent);border:1px solid var(--glass-2)}
+    .key{font-family:monospace;background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:8px;min-width:140px;text-align:center}
+    .desc{flex:1;padding-left:12px;color:#dcebf7}
+    .sub{color:var(--muted);font-size:13px;margin-top:4px}
+
+    .legend{display:flex;gap:8px;align-items:center;margin-top:14px}
+    .chip{padding:6px 8px;border-radius:8px;background:linear-gradient(90deg,var(--accent2),var(--accent1));font-size:13px}
+
+    footer{margin-top:22px;color:var(--muted);font-size:13px}
+
+    /* highlight colors per category */
+    .cat-general{border-left:6px solid var(--accent1)}
+    .cat-layers{border-left:6px solid var(--accent2)}
+    .cat-selection{border-left:6px solid var(--accent3)}
+    .cat-brush{border-left:6px solid #10b981}
+    .cat-type{border-left:6px solid #f59e0b}
+
+    /* small helper for showing Win/Mac */
+    .key .win{display:inline} .key .mac{display:none}
+    .mac-mode .key .win{display:none} .mac-mode .key .mac{display:inline}
+
+    /* search */
+    .search-row{display:flex;gap:10px;margin-top:12px}
+    .search-row input{flex:1;padding:10px;border-radius:12px;border:0;background:rgba(255,255,255,0.02);color:#cfe8ff}
+
+    .download{margin-left:8px;padding:10px 14px;border-radius:12px;background:linear-gradient(90deg,var(--accent1),var(--accent3));border:0;color:white;cursor:pointer}
+  </style>
 </head>
 <body>
-<h1>Photoshop 2026 Shortcuts</h1>
+  <div class="wrap" id="app">
+    <header>
+      <div class="logo" aria-hidden><span>Ps</span></div>
+      <div>
+        <h1>Photoshop 2026 — Shortcut Cheat Sheet</h1>
+        <p class="lead">A colorful, categorized and responsive HTML cheat-sheet for Windows and macOS. Toggle to view Mac or Windows keys.</p>
+      </div>
 
-<details open>
-  <summary>General Shortcuts</summary>
-  <div class="shortcut-list">
-    <div class="shortcut-item"><div class="command">New File</div><div class="keys">Ctrl + N (Cmd + N)</div></div>
-    <div class="shortcut-item"><div class="command">Open File</div><div class="keys">Ctrl + O (Cmd + O)</div></div>
-    <div class="shortcut-item"><div class="command">Save File</div><div class="keys">Ctrl + S (Cmd + S)</div></div>
-    <div class="shortcut-item"><div class="command">Save As</div><div class="keys">Shift + Ctrl + S (Shift + Cmd + S)</div></div>
-    <div class="shortcut-item"><div class="command">Save for Web</div><div class="keys">Alt + Ctrl + S (Option + Cmd + S)</div></div>
-    <div class="shortcut-item"><div class="command">Print</div><div class="keys">Ctrl + P (Cmd + P)</div></div>
-    <div class="shortcut-item"><div class="command">Undo</div><div class="keys">Ctrl + Z (Cmd + Z)</div></div>
-    <div class="shortcut-item"><div class="command">Step Backward (multiple undos)</div><div class="keys">Ctrl + Alt + Z (Cmd + Option + Z)</div></div>
-    <div class="shortcut-item"><div class="command">Redo</div><div class="keys">Ctrl + Shift + Z (Cmd + Shift + Z)</div></div>
-    <div class="shortcut-item"><div class="command">Copy</div><div class="keys">Ctrl + C (Cmd + C)</div></div>
-    <div class="shortcut-item"><div class="command">Cut</div><div class="keys">Ctrl + X (Cmd + X)</div></div>
-    <div class="shortcut-item"><div class="command">Paste</div><div class="keys">Ctrl + V (Cmd + V)</div></div>
-    <div class="shortcut-item"><div class="command">Paste in Place</div><div class="keys">Shift + Ctrl + V (Shift + Cmd + V)</div></div>
-    <div class="shortcut-item"><div class="command">Select All</div><div class="keys">Ctrl + A (Cmd + A)</div></div>
-    <div class="shortcut-item"><div class="command">Deselect</div><div class="keys">Ctrl + D (Cmd + D)</div></div>
-    <div class="shortcut-item"><div class="command">Reselect</div><div class="keys">Shift + Ctrl + D (Shift + Cmd + D)</div></div>
-    <div class="shortcut-item"><div class="command">Feather Selection</div><div class="keys">Shift + F6</div></div>
-    <div class="shortcut-item"><div class="command">Fill</div><div class="keys">Shift + F5</div></div>
-    <div class="shortcut-item"><div class="command">Inverse Selection</div><div class="keys">Shift + Ctrl + I (Shift + Cmd + I)</div></div>
-    <div class="shortcut-item"><div class="command">Zoom In/Out</div><div class="keys">Ctrl + + / Ctrl + - (Cmd + + / Cmd + -)</div></div>
-    <div class="shortcut-item"><div class="command">Fit Screen</div><div class="keys">Ctrl + 0 (Cmd + 0)</div></div>
-    <div class="shortcut-item"><div class="command">Actual Pixels (100% Zoom)</div><div class="keys">Ctrl + 1 (Cmd + 1)</div></div>
-    <div class="shortcut-item"><div class="command">Toggle Screen Mode</div><div class="keys">F</div></div>
+      <div class="controls">
+        <div class="toggle" role="tablist" aria-label="platform toggle">
+          <button id="winBtn" class="active" onclick="setMode('win')">Windows</button>
+          <button id="macBtn" onclick="setMode('mac')">Mac</button>
+        </div>
+        <button class="download" onclick="downloadHTML()">Download HTML</button>
+      </div>
+    </header>
+
+    <div class="search-row">
+      <input id="filter" placeholder="Search shortcuts, e.g. 'layer', 'transform'..." oninput="filterList()" />
+    </div>
+
+    <main id="mainGrid" class="grid">
+      <!-- General -->
+      <section class="card cat-general" data-cat="general">
+        <h2>General <span class="badge">Basics</span></h2>
+        <ul class="shortcut-list">
+          <li class="item"><div class="desc"><strong>New Document</strong><div class="sub">Create a new canvas</div></div><div class="key" data-key="New Document"><span class="win">Ctrl + N</span><span class="mac">⌘ + N</span></div></li>
+          <li class="item"><div class="desc"><strong>Open</strong><div class="sub">Open a file</div></div><div class="key" data-key="Open"><span class="win">Ctrl + O</span><span class="mac">⌘ + O</span></div></li>
+          <li class="item"><div class="desc"><strong>Save</strong><div class="sub">Save current file</div></div><div class="key" data-key="Save"><span class="win">Ctrl + S</span><span class="mac">⌘ + S</span></div></li>
+          <li class="item"><div class="desc"><strong>Undo / Redo</strong><div class="sub">Step backward / toggle</div></div><div class="key" data-key="Undo"><span class="win">Ctrl + Z (toggle)</span><span class="mac">⌘ + Z</span></div></li>
+          <li class="item"><div class="desc"><strong>Step Backward</strong><div class="sub">Multiple undos</div></div><div class="key" data-key="Step Backward"><span class="win">Ctrl + Alt + Z</span><span class="mac">⌘ + Option + Z</span></div></li>
+        </ul>
+      </section>
+
+      <!-- Navigation & Zoom -->
+      <section class="card" data-cat="nav">
+        <h2>Navigation & Zoom <span class="badge">View</span></h2>
+        <ul class="shortcut-list">
+          <li class="item"><div class="desc"><strong>Fit on Screen</strong><div class="sub">Fit image to window</div></div><div class="key" data-key="Fit"><span class="win">Ctrl + 0</span><span class="mac">⌘ + 0</span></div></li>
+          <li class="item"><div class="desc"><strong>Actual Pixels</strong><div class="sub">100% zoom</div></div><div class="key" data-key="100%"><span class="win">Ctrl + 1</span><span class="mac">⌘ + 1</span></div></li>
+          <li class="item"><div class="desc"><strong>Zoom In / Out</strong><div class="sub">Quick zoom</div></div><div class="key" data-key="Zoom"><span class="win">Ctrl + + / -</span><span class="mac">⌘ + + / -</span></div></li>
+          <li class="item"><div class="desc"><strong>Rotate View Tool</strong><div class="sub">Temporarily rotate canvas</div></div><div class="key" data-key="Rotate View"><span class="win">R</span><span class="mac">R</span></div></li>
+        </ul>
+      </section>
+
+      <!-- Selection -->
+      <section class="card cat-selection" data-cat="selection">
+        <h2>Selection <span class="badge">Marquee & Lasso</span></h2>
+        <ul class="shortcut-list">
+          <li class="item"><div class="desc"><strong>Rectangular / Elliptical Marquee</strong><div class="sub">Switch / create selection</div></div><div class="key" data-key="Marquee"><span class="win">M</span><span class="mac">M</span></div></li>
+          <li class="item"><div class="desc"><strong>Lasso Tool</strong><div class="sub">Freehand selection</div></div><div class="key" data-key="Lasso"><span class="win">L</span><span class="mac">L</span></div></li>
+          <li class="item"><div class="desc"><strong>Quick Selection / Magic Wand</strong><div class="sub">Smart selection tools</div></div><div class="key" data-key="Quick Select"><span class="win">W</span><span class="mac">W</span></div></li>
+          <li class="item"><div class="desc"><strong>Select All / Deselect</strong><div class="sub">All / remove selection</div></div><div class="key" data-key="Select All"><span class="win">Ctrl + A</span><span class="mac">⌘ + A</span></div></li>
+          <li class="item"><div class="desc"><strong>Transform Selection</strong><div class="sub">Free transform selection</div></div><div class="key" data-key="Transform Selection"><span class="win">Ctrl + T</span><span class="mac">⌘ + T</span></div></li>
+        </ul>
+      </section>
+
+      <!-- Layers -->
+      <section class="card cat-layers" data-cat="layers">
+        <h2>Layers <span class="badge">Organize</span></h2>
+        <ul class="shortcut-list">
+          <li class="item"><div class="desc"><strong>New Layer</strong><div class="sub">Create a blank layer</div></div><div class="key" data-key="New Layer"><span class="win">Ctrl + Shift + N</span><span class="mac">⌘ + Shift + N</span></div></li>
+          <li class="item"><div class="desc"><strong>Duplicate Layer</strong><div class="sub">Copy selected layer</div></div><div class="key" data-key="Duplicate Layer"><span class="win">Ctrl + J</span><span class="mac">⌘ + J</span></div></li>
+          <li class="item"><div class="desc"><strong>Merge Layers</strong><div class="sub">Flatten selection to one</div></div><div class="key" data-key="Merge"><span class="win">Ctrl + E</span><span class="mac">⌘ + E</span></div></li>
+          <li class="item"><div class="desc"><strong>Group Layers</strong><div class="sub">Put layers into folder</div></div><div class="key" data-key="Group"><span class="win">Ctrl + G</span><span class="mac">⌘ + G</span></div></li>
+          <li class="item"><div class="desc"><strong>Show/Hide Layer</strong><div class="sub">Toggle visibility</div></div><div class="key" data-key="Visibility"><span class="win">Alt + , (click eye)</span><span class="mac">Option + ,</span></div></li>
+        </ul>
+      </section>
+
+      <!-- Masks & Channels -->
+      <section class="card" data-cat="masks">
+        <h2>Masks & Channels <span class="badge">Non-destructive</span></h2>
+        <ul class="shortcut-list">
+          <li class="item"><div class="desc"><strong>Add Layer Mask</strong><div class="sub">Add mask to selected layer</div></div><div class="key" data-key="Layer Mask"><span class="win">Layer > Layer Mask > Reveal All</span><span class="mac">Layer > Layer Mask > Reveal All</span></div></li>
+          <li class="item"><div class="desc"><strong>Apply Layer Mask</strong><div class="sub">Convert mask into pixels</div></div><div class="key" data-key="Apply Mask"><span class="win">Ctrl + Alt + G</span><span class="mac">⌘ + Option + G</span></div></li>
+        </ul>
+      </section>
+
+      <!-- Brush & Painting -->
+      <section class="card cat-brush" data-cat="brush">
+        <h2>Brush & Painting <span class="badge">Brushes</span></h2>
+        <ul class="shortcut-list">
+          <li class="item"><div class="desc"><strong>Brush Tool</strong><div class="sub">Select brush</div></div><div class="key" data-key="Brush"><span class="win">B</span><span class="mac">B</span></div></li>
+          <li class="item"><div class="desc"><strong>Increase / Decrease Brush Size</strong><div class="sub">Square bracket keys</div></div><div class="key" data-key="Brush Size"><span class="win">]</span><span class="mac">]</span></div></li>
+          <li class="item"><div class="desc"><strong>Brush Hardness</strong><div class="sub">Shift + [ or ]</div></div><div class="key" data-key="Brush Hardness"><span class="win">Shift + [ / ]</span><span class="mac">Shift + [ / ]</span></div></li>
+          <li class="item"><div class="desc"><strong>Sample Color</strong><div class="sub">Eyedropper (temporarily)</div></div><div class="key" data-key="Eyedropper"><span class="win">Alt (hold)</span><span class="mac">Option (hold)</span></div></li>
+        </ul>
+      </section>
+
+      <!-- Type & Text -->
+      <section class="card cat-type" data-cat="type">
+        <h2>Type & Text <span class="badge">Typography</span></h2>
+        <ul class="shortcut-list">
+          <li class="item"><div class="desc"><strong>Type Tool</strong><div class="sub">Add or edit text</div></div><div class="key" data-key="Type Tool"><span class="win">T</span><span class="mac">T</span></div></li>
+          <li class="item"><div class="desc"><strong>Increase / Decrease Font Size</strong><div class="sub">Quick size adjust</div></div><div class="key" data-key="Font Size"><span class="win">Ctrl + Shift + &lt; / &gt;</span><span class="mac">⌘ + Shift + &lt; / &gt;</span></div></li>
+          <li class="item"><div class="desc"><strong>Commit Type</strong><div class="sub">Confirm text edit</div></div><div class="key" data-key="Commit Type"><span class="win">Ctrl + Enter / Enter (on numeric keypad)</span><span class="mac">⌘ + Return</span></div></li>
+        </ul>
+      </section>
+
+      <!-- Color & Adjustments -->
+      <section class="card" data-cat="color">
+        <h2>Color & Adjustments <span class="badge">Quick tweaks</span></h2>
+        <ul class="shortcut-list">
+          <li class="item"><div class="desc"><strong>Levels</strong><div class="sub">Open Levels adjustment</div></div><div class="key" data-key="Levels"><span class="win">Ctrl + L</span><span class="mac">⌘ + L</span></div></li>
+          <li class="item"><div class="desc"><strong>Curves</strong><div class="sub">Open Curves</div></div><div class="key" data-key="Curves"><span class="win">Ctrl + M</span><span class="mac">⌘ + M</span></div></li>
+          <li class="item"><div class="desc"><strong>Hue/Saturation</strong><div class="sub">Adjust hue and saturation</div></div><div class="key" data-key="Hue/Sat"><span class="win">Ctrl + U</span><span class="mac">⌘ + U</span></div></li>
+        </ul>
+      </section>
+
+      <!-- Transform & Free Transform -->
+      <section class="card" data-cat="transform">
+        <h2>Transform & Warp <span class="badge">Edit</span></h2>
+        <ul class="shortcut-list">
+          <li class="item"><div class="desc"><strong>Free Transform</strong><div class="sub">Scale, rotate, skew</div></div><div class="key" data-key="Free Transform"><span class="win">Ctrl + T</span><span class="mac">⌘ + T</span></div></li>
+          <li class="item"><div class="desc"><strong>Transform Again</strong><div class="sub">Repeat last transform</div></div><div class="key" data-key="Transform Again"><span class="win">Ctrl + Shift + T</span><span class="mac">⌘ + Shift + T</span></div></li>
+          <li class="item"><div class="desc"><strong>Flip Horizontal / Vertical</strong><div class="sub">Quick flip</div></div><div class="key" data-key="Flip"><span class="win">Edit > Transform > Flip Horizontal</span><span class="mac">Edit > Transform > Flip Horizontal</span></div></li>
+        </ul>
+      </section>
+
+      <!-- Actions & Automation -->
+      <section class="card" data-cat="actions">
+        <h2>Actions & Automation <span class="badge">Speed</span></h2>
+        <ul class="shortcut-list">
+          <li class="item"><div class="desc"><strong>Record Action</strong><div class="sub">Open Actions panel</div></div><div class="key" data-key="Actions"><span class="win">Window > Actions (then record)</span><span class="mac">Window > Actions</span></div></li>
+          <li class="item"><div class="desc"><strong>Play Last Action</strong><div class="sub">Replay previous</div></div><div class="key" data-key="Play Action"><span class="win">Alt + F9 (panel dependent)</span><span class="mac">Option + F9</span></div></li>
+        </ul>
+      </section>
+
+      <!-- Useful Tools -->
+      <section class="card" data-cat="tools">
+        <h2>Tools Quick Keys <span class="badge">Jump to tool</span></h2>
+        <ul class="shortcut-list">
+          <li class="item"><div class="desc"><strong>Move</strong></div><div class="key" data-key="Move">V</div></li>
+          <li class="item"><div class="desc"><strong>Rectangular Marquee</strong></div><div class="key" data-key="Rect Marquee">M</div></li>
+          <li class="item"><div class="desc"><strong>Lasso</strong></div><div class="key" data-key="Lasso">L</div></li>
+          <li class="item"><div class="desc"><strong>Magic Wand / Quick Select</strong></div><div class="key" data-key="Magic Wand">W</div></li>
+          <li class="item"><div class="desc"><strong>Crop</strong></div><div class="key" data-key="Crop">C</div></li>
+          <li class="item"><div class="desc"><strong>Brush</strong></div><div class="key" data-key="Brush">B</div></li>
+          <li class="item"><div class="desc"><strong>Clone Stamp</strong></div><div class="key" data-key="Clone">S</div></li>
+          <li class="item"><div class="desc"><strong>Gradient / Paint Bucket</strong></div><div class="key" data-key="Gradient">G</div></li>
+          <li class="item"><div class="desc"><strong>Dodge / Burn</strong></div><div class="key" data-key="Dodge">O</div></li>
+        </ul>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="legend"><div class="chip">Windows &amp; macOS friendly</div><div class="chip">Based on Adobe official shortcuts &amp; community cheat sheets</div></div>
+      <p style="margin-top:10px">Tip: press the buttons at top-right to view platform-specific keys. Search to filter by keyword. This sheet is a curated, compact selection — for the complete and customizable list open Photoshop and go to <em>Edit &gt; Keyboard Shortcuts</em>.</p>
+    </footer>
   </div>
-</details>
 
-<!-- Additional categories can be added similarly -->
+  <script>
+    const app = document.getElementById('app');
+    function setMode(mode){
+      const winBtn = document.getElementById('winBtn');
+      const macBtn = document.getElementById('macBtn');
+      if(mode==='mac'){
+        document.documentElement.classList.add('mac-mode');
+        macBtn.classList.add('active'); winBtn.classList.remove('active');
+      } else {
+        document.documentElement.classList.remove('mac-mode');
+        winBtn.classList.add('active'); macBtn.classList.remove('active');
+      }
+    }
+    function filterList(){
+      const q = document.getElementById('filter').value.toLowerCase();
+      document.querySelectorAll('[data-key]').forEach(el=>{
+        const key = el.getAttribute('data-key')||'';
+        const card = el.closest('.card');
+        const text = (card.innerText||'').toLowerCase();
+        if(q.trim()==='') { card.style.display='block'; return; }
+        if(text.indexOf(q)===-1) card.style.display='none'; else card.style.display='block';
+      });
+    }
 
+    function downloadHTML(){
+      const content = '<!doctype html>\n' + document.documentElement.outerHTML;
+      const blob = new Blob([content],{type:'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'Photoshop_2026_Shortcuts.html'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    }
+
+    // keyboard shortcut: toggle platform with `~` (backtick)
+    document.addEventListener('keydown', e=>{
+      if(e.key==='`'){
+        document.documentElement.classList.toggle('mac-mode');
+        document.getElementById('winBtn').classList.toggle('active');
+        document.getElementById('macBtn').classList.toggle('active');
+      }
+    });
+  </script>
 </body>
 </html>
