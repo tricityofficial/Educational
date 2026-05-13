@@ -4,30 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Microsoft Word Master Guide 2026</title>
+<title>Microsoft Word Complete Shortcuts & Tricks Guide</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
---bg:#07111f;
---bg2:#0b1728;
---card:#102038;
---white:#ffffff;
---text:#dbeafe;
+--bg:#050816;
+--card:#0f172a;
+--card2:#111c34;
+--text:#f8fafc;
 --muted:#94a3b8;
-
---blue:#2563eb;
---cyan:#06b6d4;
---green:#10b981;
---orange:#f97316;
---pink:#ec4899;
---purple:#8b5cf6;
---yellow:#eab308;
-
---radius:24px;
---shadow:0 12px 40px rgba(0,0,0,0.35);
+--primary:#2563eb;
+--secondary:#7c3aed;
+--accent:#06b6d4;
+--success:#10b981;
+--warning:#f59e0b;
+--danger:#ef4444;
+--radius:22px;
+--shadow:0 10px 35px rgba(0,0,0,.35);
 }
 
 *{
@@ -41,19 +40,18 @@ scroll-behavior:smooth;
 }
 
 body{
-font-family:Inter,Segoe UI,Arial,sans-serif;
-background:linear-gradient(180deg,#06101c,#081425,#091827);
-color:white;
+font-family:'Inter',sans-serif;
+background:
+linear-gradient(180deg,#020617,#07111f,#0f172a);
+color:var(--text);
 overflow-x:hidden;
 }
 
 .container{
 max-width:1500px;
 margin:auto;
-padding:24px;
+padding:25px;
 }
-
-/* HERO */
 
 .hero{
 display:flex;
@@ -61,239 +59,239 @@ justify-content:space-between;
 align-items:center;
 gap:30px;
 flex-wrap:wrap;
-padding:35px;
-border-radius:30px;
-margin-bottom:30px;
+
+padding:45px;
+border-radius:32px;
 
 background:
-linear-gradient(135deg,
-rgba(37,99,235,0.18),
-rgba(6,182,212,0.08));
+linear-gradient(
+135deg,
+rgba(37,99,235,.20),
+rgba(124,58,237,.20)
+);
 
-border:1px solid rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(10px);
+
 box-shadow:var(--shadow);
+
+position:relative;
+overflow:hidden;
 }
 
-.hero-left{
+.hero::before{
+content:'';
+position:absolute;
+
+width:500px;
+height:500px;
+
+background:
+radial-gradient(circle,
+rgba(255,255,255,.14),
+transparent);
+
+top:-200px;
+right:-150px;
+}
+
+.logo-wrap{
 display:flex;
 align-items:center;
-gap:24px;
-flex:1;
-min-width:300px;
+gap:20px;
+z-index:2;
 }
 
 .logo{
 width:95px;
 height:95px;
+
 border-radius:24px;
+
+background:
+linear-gradient(
+135deg,
+#2563eb,
+#06b6d4
+);
 
 display:flex;
 align-items:center;
 justify-content:center;
 
 font-size:42px;
+font-weight:800;
 
-background:
-linear-gradient(135deg,
-var(--blue),
-var(--cyan));
-
-box-shadow:0 10px 30px rgba(37,99,235,0.5);
+box-shadow:
+0 0 35px rgba(37,99,235,.45);
 }
 
-.hero-text h1{
-font-size:42px;
-margin-bottom:12px;
+.hero h1{
+font-size:3.2rem;
+line-height:1.1;
+margin-bottom:15px;
 }
 
-.hero-text p{
+.hero p{
+max-width:750px;
 line-height:1.8;
-color:var(--text);
-max-width:850px;
-font-size:15px;
+color:var(--muted);
+font-size:17px;
 }
 
-.hero-buttons{
+.controls{
 display:flex;
-gap:12px;
 flex-wrap:wrap;
+gap:15px;
+margin-top:25px;
 }
 
 .btn{
-padding:14px 22px;
+padding:15px 24px;
 border:none;
-border-radius:14px;
+border-radius:18px;
+font-size:15px;
+font-weight:700;
 cursor:pointer;
-font-weight:600;
-color:white;
+transition:.3s;
+}
 
+.btn-primary{
 background:
-linear-gradient(135deg,
-var(--blue),
-var(--cyan));
+linear-gradient(
+135deg,
+#2563eb,
+#7c3aed
+);
 
-transition:0.3s;
+color:white;
+}
+
+.btn-secondary{
+background:rgba(255,255,255,.07);
+color:white;
+border:1px solid rgba(255,255,255,.08);
 }
 
 .btn:hover{
-transform:translateY(-3px);
+transform:translateY(-5px);
 }
 
-/* SEARCH */
-
 .search-box{
-margin-bottom:25px;
+margin:35px 0;
+position:sticky;
+top:10px;
+z-index:999;
 }
 
 .search-box input{
 width:100%;
-padding:18px;
+
+padding:20px 25px;
+
 border:none;
 outline:none;
-border-radius:18px;
-background:rgba(255,255,255,0.05);
+
+border-radius:20px;
+
+background:rgba(255,255,255,.06);
+
+backdrop-filter:blur(10px);
+
 color:white;
-font-size:15px;
-border:1px solid rgba(255,255,255,0.06);
-}
-
-/* GRID */
-
-.grid{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(360px,1fr));
-
-gap:22px;
-}
-
-/* CARD */
-
-.card{
-background:
-linear-gradient(180deg,var(--bg2),var(--card));
-
-padding:24px;
-border-radius:24px;
-
-border:1px solid rgba(255,255,255,0.05);
+font-size:16px;
 
 box-shadow:var(--shadow);
-
-position:relative;
-overflow:hidden;
-
-transition:0.3s;
 }
 
-.card:hover{
-transform:translateY(-5px);
+.quick-nav{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(170px,1fr));
+
+gap:15px;
+margin-bottom:40px;
 }
 
-.card::before{
-content:'';
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:5px;
+.quick-nav a{
+text-decoration:none;
+
+padding:18px;
+
+border-radius:18px;
+
+text-align:center;
+
+font-weight:700;
+
+color:white;
 
 background:
-linear-gradient(90deg,
-var(--blue),
-var(--cyan));
+linear-gradient(
+135deg,
+rgba(37,99,235,.12),
+rgba(124,58,237,.12)
+);
+
+border:1px solid rgba(255,255,255,.06);
+
+transition:.3s;
 }
 
-.card h2{
+.quick-nav a:hover{
+transform:translateY(-5px);
+
+background:
+linear-gradient(
+135deg,
+#2563eb,
+#7c3aed
+);
+}
+
+.section{
+margin-bottom:40px;
+
+background:rgba(255,255,255,.04);
+
+border:1px solid rgba(255,255,255,.06);
+
+padding:30px;
+
+border-radius:28px;
+
+box-shadow:var(--shadow);
+}
+
+.section-title{
 display:flex;
 align-items:center;
-gap:12px;
-font-size:24px;
-margin-bottom:20px;
-flex-wrap:wrap;
+gap:15px;
+
+font-size:2rem;
+
+margin-bottom:25px;
 }
 
 .badge{
-padding:6px 12px;
+padding:8px 14px;
+
 border-radius:999px;
-background:rgba(255,255,255,0.08);
-font-size:12px;
-color:#cbd5e1;
-}
 
-ul{
-list-style:none;
-display:flex;
-flex-direction:column;
-gap:14px;
-}
-
-li{
-display:flex;
-justify-content:space-between;
-gap:14px;
-padding:14px;
-border-radius:18px;
-
-background:rgba(255,255,255,0.03);
-
-border:1px solid rgba(255,255,255,0.04);
-
-transition:0.3s;
-}
-
-li:hover{
-background:rgba(255,255,255,0.05);
-}
-
-.desc{
-flex:1;
-}
-
-.desc strong{
-display:block;
-margin-bottom:5px;
-font-size:16px;
-}
-
-.sub{
 font-size:13px;
-line-height:1.6;
-color:var(--muted);
-}
-
-.key{
-min-width:150px;
-text-align:center;
-padding:12px;
-border-radius:14px;
-
-background:rgba(255,255,255,0.08);
-
-font-family:monospace;
-font-size:13px;
-
-height:fit-content;
-}
-
-/* TABLE */
-
-.table-wrap{
-margin-top:40px;
-padding:28px;
-border-radius:26px;
+font-weight:700;
 
 background:
-linear-gradient(180deg,var(--bg2),var(--card));
-
-overflow:auto;
-
-box-shadow:var(--shadow);
+linear-gradient(
+135deg,
+#06b6d4,
+#2563eb
+);
 }
 
-.table-wrap h2{
-margin-bottom:20px;
-font-size:28px;
+.table-wrap{
+overflow-x:auto;
 }
 
 table{
@@ -302,103 +300,196 @@ border-collapse:collapse;
 min-width:900px;
 }
 
-th{
-background:rgba(255,255,255,0.08);
-padding:16px;
+th,td{
+padding:18px;
 text-align:left;
+border-bottom:1px solid rgba(255,255,255,.08);
+vertical-align:top;
 }
 
-td{
-padding:16px;
-border-bottom:1px solid rgba(255,255,255,0.05);
+th{
+background:rgba(255,255,255,.06);
+text-transform:uppercase;
 font-size:14px;
-color:#dbeafe;
+letter-spacing:1px;
 }
 
 tr:hover{
-background:rgba(255,255,255,0.03);
+background:rgba(255,255,255,.03);
 }
 
-/* FOOTER */
+.key{
+display:inline-block;
 
-.footer{
-margin-top:40px;
-padding:30px;
-border-radius:26px;
-text-align:center;
+padding:10px 16px;
+
+border-radius:12px;
 
 background:
-linear-gradient(180deg,var(--bg2),var(--card));
+linear-gradient(
+135deg,
+#1e293b,
+#0f172a
+);
 
-border:1px solid rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,.08);
+
+font-family:monospace;
+font-weight:700;
+
+box-shadow:
+0 0 18px rgba(37,99,235,.15);
 }
 
-.footer h3{
-font-size:28px;
-margin-bottom:12px;
+.cards{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:20px;
 }
 
-.footer p{
+.card{
+background:
+linear-gradient(
+180deg,
+#0f172a,
+#111827
+);
+
+padding:24px;
+
+border-radius:24px;
+
+border:1px solid rgba(255,255,255,.06);
+
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card h3{
+margin-bottom:15px;
+font-size:1.3rem;
+}
+
+.card p{
 line-height:1.8;
 color:var(--muted);
 }
 
-/* RESPONSIVE */
+.card ul{
+padding-left:20px;
+line-height:1.9;
+color:var(--muted);
+}
+
+.tip{
+padding:18px;
+
+background:rgba(16,185,129,.12);
+
+border-left:4px solid var(--success);
+
+border-radius:14px;
+
+margin-top:15px;
+
+line-height:1.8;
+
+color:#d1fae5;
+}
+
+.qr-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(240px,1fr));
+
+gap:20px;
+}
+
+.qr-card{
+background:
+linear-gradient(
+135deg,
+#111827,
+#0f172a
+);
+
+padding:24px;
+border-radius:24px;
+text-align:center;
+}
+
+.fake-qr{
+width:160px;
+height:160px;
+
+margin:15px auto;
+
+background:
+linear-gradient(90deg,#000 10px,transparent 10px),
+linear-gradient(#000 10px,transparent 10px);
+
+background-size:20px 20px;
+background-color:white;
+
+border-radius:10px;
+}
+
+.footer{
+text-align:center;
+padding:60px 20px;
+color:var(--muted);
+}
+
+.top-btn{
+position:fixed;
+right:25px;
+bottom:25px;
+
+width:60px;
+height:60px;
+
+border:none;
+border-radius:50%;
+
+background:
+linear-gradient(
+135deg,
+#2563eb,
+#7c3aed
+);
+
+color:white;
+
+font-size:24px;
+
+cursor:pointer;
+
+box-shadow:var(--shadow);
+}
 
 @media(max-width:768px){
 
-.container{
-padding:16px;
-}
-
 .hero{
-padding:24px;
+padding:28px;
 }
 
-.hero-left{
-flex-direction:column;
-align-items:flex-start;
+.hero h1{
+font-size:2.2rem;
 }
 
-.hero-text h1{
-font-size:30px;
+.section-title{
+font-size:1.5rem;
 }
 
-.logo{
-width:75px;
-height:75px;
-font-size:34px;
-}
-
-.grid{
-grid-template-columns:1fr;
-}
-
-.card{
+.section{
 padding:20px;
 }
 
-li{
-flex-direction:column;
-}
-
-.key{
-width:100%;
-min-width:100%;
-}
-
-}
-
-/* SCROLLBAR */
-
-::-webkit-scrollbar{
-width:8px;
-height:8px;
-}
-
-::-webkit-scrollbar-thumb{
-background:var(--cyan);
-border-radius:999px;
 }
 
 </style>
@@ -408,531 +499,1585 @@ border-radius:999px;
 
 <div class="container">
 
-<!-- HERO -->
+<div class="hero">
 
-<section class="hero">
-
-<div class="hero-left">
+<div class="logo-wrap">
 
 <div class="logo">
-<i class="fa-solid fa-w"></i>
+W
 </div>
 
-<div class="hero-text">
+<div>
 
-<h1>Microsoft Word Master Guide 2026</h1>
+<h1>
+Microsoft Word Complete Shortcuts & Tricks Guide
+</h1>
 
 <p>
-Complete Microsoft Word shortcuts, hidden tricks,
-QR code generation, AI productivity tools,
-creative designing tricks, SmartArt, mail merge,
-voice typing, certificates, posters,
-business cards, automation and power-user techniques.
+Advanced interactive Microsoft Word learning portal with shortcuts, hidden tricks, QR generation, AI tools, productivity hacks, creative projects, automation systems, collaboration features and advanced power-user techniques.
 </p>
 
+<div class="controls">
+
+<button class="btn btn-primary" onclick="window.print()">
+Print Cheat Sheet
+</button>
+
+<button class="btn btn-secondary" onclick="downloadHTML()">
+Download HTML
+</button>
+
+</div>
+
 </div>
 
 </div>
 
-<div class="hero-buttons">
-<button class="btn">Download PDF</button>
-<button class="btn">Print Guide</button>
-<button class="btn">Dark Mode</button>
 </div>
-
-</section>
-
-<!-- SEARCH -->
 
 <div class="search-box">
 
 <input
 type="text"
 id="searchInput"
-placeholder="Search shortcuts, tricks, QR codes..."
-onkeyup="searchCards()"
-/>
+placeholder="Search shortcuts, tricks, tools, QR features, AI tools..."
+>
 
 </div>
 
-<!-- GRID -->
+<div class="quick-nav">
 
-<div class="grid">
+<a href="#basic">Basic</a>
 
-<!-- BASIC -->
+<a href="#editing">Editing</a>
 
-<section class="card searchable">
+<a href="#formatting">Formatting</a>
 
-<h2>
-<i class="fa-solid fa-folder-open"></i>
-Basic File Shortcuts
+<a href="#navigation">Navigation</a>
+
+<a href="#hidden">Hidden Tricks</a>
+
+<a href="#qr">QR Guide</a>
+
+<a href="#creative">Creative</a>
+
+<a href="#advanced">Advanced</a>
+
+</div>
+<section class="section searchable" id="basic">
+
+<div class="section-title">
+📁 Basic File Shortcuts
 <span class="badge">Essential</span>
-</h2>
-
-<ul>
-
-<li>
-<div class="desc">
-<strong>New Document</strong>
-<div class="sub">
-Open new blank document instantly.
 </div>
-</div>
-<div class="key">Ctrl + N</div>
-</li>
-
-<li>
-<div class="desc">
-<strong>Save File</strong>
-<div class="sub">
-Save current work quickly.
-</div>
-</div>
-<div class="key">Ctrl + S</div>
-</li>
-
-<li>
-<div class="desc">
-<strong>Print Document</strong>
-<div class="sub">
-Open printer settings.
-</div>
-</div>
-<div class="key">Ctrl + P</div>
-</li>
-
-<li>
-<div class="desc">
-<strong>Open File</strong>
-<div class="sub">
-Browse and open document.
-</div>
-</div>
-<div class="key">Ctrl + O</div>
-</li>
-
-</ul>
-
-</section>
-
-<!-- EDIT -->
-
-<section class="card searchable">
-
-<h2>
-<i class="fa-solid fa-pen"></i>
-Editing Shortcuts
-<span class="badge">Editing</span>
-</h2>
-
-<ul>
-
-<li>
-<div class="desc">
-<strong>Copy</strong>
-<div class="sub">
-Select text → Copy content.
-</div>
-</div>
-<div class="key">Ctrl + C</div>
-</li>
-
-<li>
-<div class="desc">
-<strong>Paste</strong>
-<div class="sub">
-Paste copied content.
-</div>
-</div>
-<div class="key">Ctrl + V</div>
-</li>
-
-<li>
-<div class="desc">
-<strong>Undo</strong>
-<div class="sub">
-Reverse previous action.
-</div>
-</div>
-<div class="key">Ctrl + Z</div>
-</li>
-
-<li>
-<div class="desc">
-<strong>Replace</strong>
-<div class="sub">
-Replace repeated words.
-</div>
-</div>
-<div class="key">Ctrl + H</div>
-</li>
-
-</ul>
-
-</section>
-
-<!-- FORMATTING -->
-
-<section class="card searchable">
-
-<h2>
-<i class="fa-solid fa-font"></i>
-Text Formatting
-<span class="badge">Formatting</span>
-</h2>
-
-<ul>
-
-<li>
-<div class="desc">
-<strong>Bold Text</strong>
-<div class="sub">
-Select text → make bold.
-</div>
-</div>
-<div class="key">Ctrl + B</div>
-</li>
-
-<li>
-<div class="desc">
-<strong>Italic Text</strong>
-<div class="sub">
-Apply italic formatting.
-</div>
-</div>
-<div class="key">Ctrl + I</div>
-</li>
-
-<li>
-<div class="desc">
-<strong>Underline</strong>
-<div class="sub">
-Underline selected text.
-</div>
-</div>
-<div class="key">Ctrl + U</div>
-</li>
-
-<li>
-<div class="desc">
-<strong>Change Case</strong>
-<div class="sub">
-Toggle upper/lower case.
-</div>
-</div>
-<div class="key">Shift + F3</div>
-</li>
-
-<li>
-<div class="desc">
-<strong>Superscript</strong>
-<div class="sub">
-Create x² formatting.
-</div>
-</div>
-<div class="key">Ctrl + Shift + =</div>
-</li>
-
-</ul>
-
-</section>
-
-<!-- HIDDEN -->
-
-<section class="card searchable">
-
-<h2>
-<i class="fa-solid fa-wand-magic-sparkles"></i>
-Hidden Typing Tricks
-<span class="badge">Secret</span>
-</h2>
-
-<ul>
-
-<li>
-<div class="desc">
-<strong>=rand()</strong>
-<div class="sub">
-Generate tutorial text automatically.
-</div>
-</div>
-<div class="key">Type + Enter</div>
-</li>
-
-<li>
-<div class="desc">
-<strong>=lorem()</strong>
-<div class="sub">
-Generate dummy design text.
-</div>
-</div>
-<div class="key">Type + Enter</div>
-</li>
-
-<li>
-<div class="desc">
-<strong>---</strong>
-<div class="sub">
-Create horizontal line.
-</div>
-</div>
-<div class="key">Press Enter</div>
-</li>
-
-<li>
-<div class="desc">
-<strong>===</strong>
-<div class="sub">
-Create double separator line.
-</div>
-</div>
-<div class="key">Press Enter</div>
-</li>
-
-<li>
-<div class="desc">
-<strong>F4</strong>
-<div class="sub">
-Repeat previous action.
-</div>
-</div>
-<div class="key">Repeat</div>
-</li>
-
-</ul>
-
-</section>
-
-<!-- QR -->
-
-<section class="card searchable">
-
-<h2>
-<i class="fa-solid fa-qrcode"></i>
-QR Code Tricks
-<span class="badge">Modern</span>
-</h2>
-
-<ul>
-
-<li>
-<div class="desc">
-<strong>Text QR</strong>
-<div class="sub">
-Create QR containing notes/text.
-</div>
-</div>
-<div class="key">QR4Office</div>
-</li>
-
-<li>
-<div class="desc">
-<strong>WiFi QR</strong>
-<div class="sub">
-Auto connect WiFi after scan.
-</div>
-</div>
-<div class="key">WIFI Format</div>
-</li>
-
-<li>
-<div class="desc">
-<strong>UPI QR</strong>
-<div class="sub">
-Payment QR for GPay/PhonePe.
-</div>
-</div>
-<div class="key">upi://pay</div>
-</li>
-
-<li>
-<div class="desc">
-<strong>Email QR</strong>
-<div class="sub">
-Open email draft after scan.
-</div>
-</div>
-<div class="key">mailto:</div>
-</li>
-
-<li>
-<div class="desc">
-<strong>Phone QR</strong>
-<div class="sub">
-Open dial screen instantly.
-</div>
-</div>
-<div class="key">tel:</div>
-</li>
-
-</ul>
-
-</section>
-
-<!-- AI -->
-
-<section class="card searchable">
-
-<h2>
-<i class="fa-solid fa-robot"></i>
-AI & Productivity
-<span class="badge">Smart</span>
-</h2>
-
-<ul>
-
-<li>
-<div class="desc">
-<strong>Voice Typing</strong>
-<div class="sub">
-Convert speech into text.
-</div>
-</div>
-<div class="key">Dictate</div>
-</li>
-
-<li>
-<div class="desc">
-<strong>Translator</strong>
-<div class="sub">
-Translate selected language.
-</div>
-</div>
-<div class="key">Review</div>
-</li>
-
-<li>
-<div class="desc">
-<strong>Read Aloud</strong>
-<div class="sub">
-Listen document as audio.
-</div>
-</div>
-<div class="key">Read Aloud</div>
-</li>
-
-<li>
-<div class="desc">
-<strong>Mail Merge</strong>
-<div class="sub">
-Bulk certificates and IDs.
-</div>
-</div>
-<div class="key">Mailings</div>
-</li>
-
-<li>
-<div class="desc">
-<strong>Macro Recording</strong>
-<div class="sub">
-Automate repetitive tasks.
-</div>
-</div>
-<div class="key">Developer</div>
-</li>
-
-</ul>
-
-</section>
-
-</div>
-
-<!-- TABLE -->
 
 <div class="table-wrap">
-
-<h2>
-<i class="fa-solid fa-table"></i>
-Quick Reference Table
-</h2>
 
 <table>
 
 <tr>
 <th>Feature</th>
 <th>Shortcut</th>
-<th>How To Use</th>
+<th>How To Apply</th>
 </tr>
 
 <tr>
-<td>Copy</td>
-<td>Ctrl + C</td>
-<td>Select text then press shortcut</td>
+<td>New Document</td>
+<td><span class="key">Ctrl + N</span></td>
+<td>Press together to instantly create a blank document.</td>
 </tr>
 
 <tr>
-<td>Paste</td>
-<td>Ctrl + V</td>
-<td>Place cursor and paste</td>
+<td>Open File</td>
+<td><span class="key">Ctrl + O</span></td>
+<td>Open file browser and choose Word file.</td>
 </tr>
 
 <tr>
-<td>Bold</td>
-<td>Ctrl + B</td>
-<td>Select text and apply bold</td>
+<td>Save File</td>
+<td><span class="key">Ctrl + S</span></td>
+<td>Quickly save current work.</td>
 </tr>
 
 <tr>
-<td>Find</td>
-<td>Ctrl + F</td>
-<td>Search any word quickly</td>
+<td>Save As</td>
+<td><span class="key">F12</span></td>
+<td>Create another copy with different format or name.</td>
 </tr>
 
 <tr>
-<td>Page Break</td>
-<td>Ctrl + Enter</td>
-<td>Create new page instantly</td>
+<td>Print</td>
+<td><span class="key">Ctrl + P</span></td>
+<td>Open printer settings instantly.</td>
 </tr>
 
 <tr>
-<td>Voice Typing</td>
-<td>Dictate</td>
-<td>Speak and Word types automatically</td>
+<td>Close File</td>
+<td><span class="key">Ctrl + W</span></td>
+<td>Close current active document.</td>
+</tr>
+
+<tr>
+<td>Export PDF</td>
+<td><span class="key">File → Export</span></td>
+<td>Convert Word file into PDF.</td>
+</tr>
+
+<tr>
+<td>Open Recent Files</td>
+<td><span class="key">Ctrl + F12</span></td>
+<td>Access recent Word documents quickly.</td>
 </tr>
 
 </table>
 
 </div>
 
-<!-- FOOTER -->
+</section>
 
-<footer class="footer">
+<section class="section searchable" id="editing">
 
-<h3>Microsoft Word Complete Productivity System</h3>
+<div class="section-title">
+✂️ Editing Shortcuts
+<span class="badge">Productivity</span>
+</div>
 
-<p>
-Shortcuts • Hidden Tricks • QR Codes • AI Tools • Posters • Certificates • Business Cards • SmartArt • Automation
-</p>
+<div class="table-wrap">
 
-<p>
-Designed for students, offices, institutes, CSC centers, designers and productivity users.
-</p>
+<table>
 
-</footer>
+<tr>
+<th>Feature</th>
+<th>Shortcut</th>
+<th>Guide</th>
+</tr>
+
+<tr>
+<td>Copy</td>
+<td><span class="key">Ctrl + C</span></td>
+<td>Select content then copy.</td>
+</tr>
+
+<tr>
+<td>Paste</td>
+<td><span class="key">Ctrl + V</span></td>
+<td>Paste copied text or objects.</td>
+</tr>
+
+<tr>
+<td>Cut</td>
+<td><span class="key">Ctrl + X</span></td>
+<td>Remove selected content and copy.</td>
+</tr>
+
+<tr>
+<td>Undo</td>
+<td><span class="key">Ctrl + Z</span></td>
+<td>Reverse last action.</td>
+</tr>
+
+<tr>
+<td>Redo</td>
+<td><span class="key">Ctrl + Y</span></td>
+<td>Restore removed action.</td>
+</tr>
+
+<tr>
+<td>Find</td>
+<td><span class="key">Ctrl + F</span></td>
+<td>Search words inside document.</td>
+</tr>
+
+<tr>
+<td>Replace</td>
+<td><span class="key">Ctrl + H</span></td>
+<td>Replace repeated words automatically.</td>
+</tr>
+
+<tr>
+<td>Paste Special</td>
+<td><span class="key">Ctrl + Alt + V</span></td>
+<td>Paste as image, HTML, Unicode or text.</td>
+</tr>
+
+<tr>
+<td>Clear Formatting</td>
+<td><span class="key">Ctrl + Space</span></td>
+<td>Remove text formatting instantly.</td>
+</tr>
+
+<tr>
+<td>Select Entire Line</td>
+<td><span class="key">Shift + End</span></td>
+<td>Select full line quickly.</td>
+</tr>
+
+<tr>
+<td>Duplicate Line</td>
+<td><span class="key">Ctrl + C → Ctrl + V</span></td>
+<td>Copy and duplicate same content.</td>
+</tr>
+
+</table>
 
 </div>
 
+</section>
+
+<section class="section searchable" id="formatting">
+
+<div class="section-title">
+🎨 Text Formatting
+<span class="badge">Design</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Bold / Italic / Underline</h3>
+
+<ul>
+<li><span class="key">Ctrl + B</span> → Bold Text</li>
+<li><span class="key">Ctrl + I</span> → Italic Text</li>
+<li><span class="key">Ctrl + U</span> → Underline Text</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Advanced Font Controls</h3>
+
+<ul>
+<li><span class="key">Ctrl + Shift + ></span> Increase font size</li>
+<li><span class="key">Ctrl + Shift + <</span> Decrease font size</li>
+<li><span class="key">Shift + F3</span> Change uppercase/lowercase</li>
+<li><span class="key">Ctrl + D</span> Open font settings</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Scientific Formatting</h3>
+
+<ul>
+<li><span class="key">Ctrl + Shift + =</span> Superscript</li>
+<li><span class="key">Ctrl + =</span> Subscript</li>
+<li>Useful for formulas like H₂O and x²</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Highlight & Styling</h3>
+
+<ul>
+<li><span class="key">Alt + H</span> Open Home ribbon</li>
+<li>Use highlight tool for important text</li>
+<li>Apply text color and styles quickly</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Format Painter</h3>
+
+<ul>
+<li>Copy same formatting multiple times</li>
+<li>Double click Format Painter icon</li>
+<li>Apply across document instantly</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Paragraph Design</h3>
+
+<ul>
+<li>Add spacing</li>
+<li>Bullets & numbering</li>
+<li>Borders & shading</li>
+<li>Professional formatting</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable" id="navigation">
+
+<div class="section-title">
+🧭 Navigation Tricks
+<span class="badge">Fast Workflow</span>
+</div>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Feature</th>
+<th>Shortcut</th>
+<th>Use</th>
+</tr>
+
+<tr>
+<td>Select All</td>
+<td><span class="key">Ctrl + A</span></td>
+<td>Select entire document instantly.</td>
+</tr>
+
+<tr>
+<td>Go To</td>
+<td><span class="key">Ctrl + G</span></td>
+<td>Jump to page number or section.</td>
+</tr>
+
+<tr>
+<td>Move Word by Word</td>
+<td><span class="key">Ctrl + Arrow</span></td>
+<td>Navigate faster inside text.</td>
+</tr>
+
+<tr>
+<td>Document Start</td>
+<td><span class="key">Ctrl + Home</span></td>
+<td>Jump to beginning.</td>
+</tr>
+
+<tr>
+<td>Document End</td>
+<td><span class="key">Ctrl + End</span></td>
+<td>Jump to last page.</td>
+</tr>
+
+<tr>
+<td>Navigation Pane</td>
+<td><span class="key">Ctrl + F</span></td>
+<td>Open navigation sidebar.</td>
+</tr>
+
+<tr>
+<td>Switch Windows</td>
+<td><span class="key">Alt + Tab</span></td>
+<td>Switch between applications.</td>
+</tr>
+
+<tr>
+<td>Zoom In/Out</td>
+<td><span class="key">Ctrl + Mouse Wheel</span></td>
+<td>Adjust zoom instantly.</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<section class="section searchable" id="hidden">
+
+<div class="section-title">
+🪄 Hidden Typing Tricks
+<span class="badge">Secret Features</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Generate Random Text</h3>
+
+<p>
+Type:
+<span class="key">=rand()</span>
+and press Enter.
+</p>
+
+<div class="tip">
+Microsoft Word automatically creates tutorial text.
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Lorem Ipsum Generator</h3>
+
+<p>
+Type:
+<span class="key">=lorem()</span>
+then press Enter.
+</p>
+
+<div class="tip">
+Perfect for layouts, brochures and mockups.
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Create Horizontal Lines</h3>
+
+<p>
+Type:
+<span class="key">---</span>,
+<span class="key">===</span>,
+<span class="key">***</span>
+then press Enter.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Auto Date Insert</h3>
+
+<p>
+Press:
+<span class="key">Alt + Shift + D</span>
+</p>
+
+<div class="tip">
+Automatically inserts current date.
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Auto Time Insert</h3>
+
+<p>
+Press:
+<span class="key">Alt + Shift + T</span>
+</p>
+
+<div class="tip">
+Automatically inserts current time.
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Symbols Auto Convert</h3>
+
+<ul>
+<li>(c) → ©</li>
+<li>(r) → ®</li>
+<li>(tm) → ™</li>
+<li>--> → →</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+<section class="section searchable" id="qr">
+
+<div class="section-title">
+🔳 QR Code Creation Guide
+<span class="badge">Advanced</span>
+</div>
+
+<div class="qr-grid">
+
+<div class="qr-card">
+
+<h3>Text QR Code</h3>
+
+<div class="fake-qr"></div>
+
+<p>
+Insert → Get Add-ins → Search QR4Office → Add → Enter text → Generate QR
+</p>
+
+<div class="tip">
+Useful for notes, attendance and classroom systems.
+</div>
+
+</div>
+
+<div class="qr-card">
+
+<h3>Website QR</h3>
+
+<div class="fake-qr"></div>
+
+<p>
+Paste website URL like:
+<br><br>
+<span class="key">https://yourwebsite.com</span>
+</p>
+
+</div>
+
+<div class="qr-card">
+
+<h3>WiFi QR</h3>
+
+<div class="fake-qr"></div>
+
+<p>
+Format:
+<br><br>
+<span class="key">
+WIFI:T:WPA;S:OfficeWiFi;P:12345678;;
+</span>
+</p>
+
+</div>
+
+<div class="qr-card">
+
+<h3>Phone Call QR</h3>
+
+<div class="fake-qr"></div>
+
+<p>
+Example:
+<br><br>
+<span class="key">
+tel:+919999999999
+</span>
+</p>
+
+</div>
+
+<div class="qr-card">
+
+<h3>Email QR</h3>
+
+<div class="fake-qr"></div>
+
+<p>
+Example:
+<br><br>
+<span class="key">
+mailto:demo@gmail.com
+</span>
+</p>
+
+</div>
+
+<div class="qr-card">
+
+<h3>WhatsApp QR</h3>
+
+<div class="fake-qr"></div>
+
+<p>
+Example:
+<br><br>
+<span class="key">
+https://wa.me/919999999999
+</span>
+</p>
+
+</div>
+
+<div class="qr-card">
+
+<h3>UPI Payment QR</h3>
+
+<div class="fake-qr"></div>
+
+<p>
+Example:
+<br><br>
+<span class="key">
+upi://pay?pa=demo@upi&pn=Demo
+</span>
+</p>
+
+</div>
+
+<div class="qr-card">
+
+<h3>Location QR</h3>
+
+<div class="fake-qr"></div>
+
+<p>
+Share Google Maps locations instantly through QR scanning.
+</p>
+
+</div>
+
+</div>
+
+<div class="tip">
+
+QR codes can be used for:
+<br><br>
+
+• Digital payments  
+• Attendance systems  
+• WiFi sharing  
+• Event registration  
+• Business cards  
+• Menus  
+• Product catalogs  
+• Certificates  
+• Marketing campaigns  
+• Smart classrooms  
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+🤖 AI Features & Copilot
+<span class="badge">Modern AI</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Microsoft Copilot</h3>
+
+<ul>
+<li>Generate content automatically</li>
+<li>Rewrite professionally</li>
+<li>Create summaries</li>
+<li>Improve readability</li>
+<li>Generate reports</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>AI Writing Assistant</h3>
+
+<ul>
+<li>Grammar correction</li>
+<li>Professional tone suggestions</li>
+<li>Sentence improvement</li>
+<li>Smart recommendations</li>
+<li>Auto formatting ideas</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Document Summarizer</h3>
+
+<ul>
+<li>Summarize long reports</li>
+<li>Extract key points</li>
+<li>Create meeting notes</li>
+<li>Quick learning support</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Cloud AI Workflow</h3>
+
+<ul>
+<li>OneDrive sync</li>
+<li>AutoSave</li>
+<li>Version history</li>
+<li>Online collaboration</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+🎙 Voice Typing
+<span class="badge">Speech to Text</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>How To Start</h3>
+
+<ul>
+<li>Open MS Word</li>
+<li>Go to Home → Dictate</li>
+<li>Allow microphone permission</li>
+<li>Start speaking naturally</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Voice Commands</h3>
+
+<ul>
+<li>Say “comma” → ,</li>
+<li>Say “full stop” → .</li>
+<li>Say “new line”</li>
+<li>Say “question mark” → ?</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Benefits</h3>
+
+<ul>
+<li>Faster typing</li>
+<li>Accessibility support</li>
+<li>Hands-free workflow</li>
+<li>Meeting transcription</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+🌍 Translator Tool
+<span class="badge">Multilingual</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Translate Selected Text</h3>
+
+<p>
+Select text →
+Review →
+Translate
+</p>
+
+<div class="tip">
+Translate text instantly inside Word.
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Translate Full Document</h3>
+
+<p>
+Review →
+Translate →
+Translate Document
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Supported Use Cases</h3>
+
+<ul>
+<li>International business</li>
+<li>Student assignments</li>
+<li>Multilingual communication</li>
+<li>Content localization</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+🔊 Read Aloud Feature
+<span class="badge">Accessibility</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>How To Use</h3>
+
+<ul>
+<li>Select text</li>
+<li>Go to Review</li>
+<li>Click Read Aloud</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Advantages</h3>
+
+<ul>
+<li>Proofreading support</li>
+<li>Accessibility improvement</li>
+<li>Better concentration</li>
+<li>Listening-based learning</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Playback Controls</h3>
+
+<ul>
+<li>Pause reading</li>
+<li>Adjust speed</li>
+<li>Voice selection</li>
+<li>Sentence highlighting</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+📬 Mail Merge
+<span class="badge">Bulk Automation</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Bulk Certificates</h3>
+
+<p>
+Automatically generate hundreds of certificates using Excel data.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Salary Slips</h3>
+
+<p>
+Generate employee salary slips instantly.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>ID Cards</h3>
+
+<p>
+Create bulk student or employee ID cards.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>How To Start</h3>
+
+<ul>
+<li>Mailings → Start Mail Merge</li>
+<li>Connect Excel file</li>
+<li>Insert merge fields</li>
+<li>Finish & Merge</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+⚙ Macro Recording
+<span class="badge">Automation</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Enable Developer Tab</h3>
+
+<p>
+File →
+Options →
+Customize Ribbon →
+Enable Developer
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Record Macro</h3>
+
+<p>
+Developer →
+Record Macro →
+Perform repetitive task →
+Stop Recording
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Macro Benefits</h3>
+
+<ul>
+<li>Save time</li>
+<li>Reduce repetitive work</li>
+<li>One-click automation</li>
+<li>Advanced office workflow</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+📊 SmartArt Graphics
+<span class="badge">Professional Design</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Flowcharts</h3>
+
+<p>Create professional process flow diagrams.</p>
+
+</div>
+
+<div class="card">
+
+<h3>Org Charts</h3>
+
+<p>Visualize company hierarchy professionally.</p>
+
+</div>
+
+<div class="card">
+
+<h3>Timelines</h3>
+
+<p>Create project timelines and roadmaps.</p>
+
+</div>
+
+<div class="card">
+
+<h3>How To Use</h3>
+
+<p>
+Insert →
+SmartArt →
+Choose category →
+Add content
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+😀 Icons, Emojis & 3D Models
+<span class="badge">Creative Tools</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Icons</h3>
+
+<ul>
+<li>Insert → Icons</li>
+<li>Search professional icons</li>
+<li>Use SVG editable graphics</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Emoji Panel</h3>
+
+<ul>
+<li><span class="key">Windows + .</span></li>
+<li>Open emoji keyboard instantly</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>3D Models</h3>
+
+<ul>
+<li>Insert interactive 3D objects</li>
+<li>Rotate and customize models</li>
+<li>Professional presentations</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Stock Images</h3>
+
+<ul>
+<li>Insert → Pictures → Stock Images</li>
+<li>Use royalty-free visuals</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable" id="creative">
+
+<div class="section-title">
+🎨 Creative Things You Can Make
+<span class="badge">Creative Studio</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Business Designs</h3>
+
+<ul>
+<li>Invoices</li>
+<li>Flyers</li>
+<li>Brochures</li>
+<li>Business cards</li>
+<li>QR sheets</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Education Projects</h3>
+
+<ul>
+<li>Certificates</li>
+<li>ID cards</li>
+<li>Assignments</li>
+<li>Study notes</li>
+<li>Timetables</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Marketing Materials</h3>
+
+<ul>
+<li>Posters</li>
+<li>Social media creatives</li>
+<li>Advertisement layouts</li>
+<li>Menus</li>
+<li>Promotional banners</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Personal Projects</h3>
+
+<ul>
+<li>Resume templates</li>
+<li>Wedding cards</li>
+<li>Invitations</li>
+<li>Labels</li>
+<li>Event passes</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+<section class="section searchable" id="advanced">
+
+<div class="section-title">
+⚡ Advanced Power User Tricks
+<span class="badge">Expert</span>
+</div>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Feature</th>
+<th>Shortcut</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>Repeat Last Action</td>
+<td><span class="key">F4</span></td>
+<td>Repeat previous action instantly.</td>
+</tr>
+
+<tr>
+<td>Move Paragraph</td>
+<td><span class="key">Alt + Shift + ↑ / ↓</span></td>
+<td>Move paragraphs without copy-paste.</td>
+</tr>
+
+<tr>
+<td>Zoom In/Out</td>
+<td><span class="key">Ctrl + Mouse Wheel</span></td>
+<td>Quick document zoom.</td>
+</tr>
+
+<tr>
+<td>Ribbon Shortcuts</td>
+<td><span class="key">Alt</span></td>
+<td>Display all ribbon keyboard access keys.</td>
+</tr>
+
+<tr>
+<td>Open Hyperlink</td>
+<td><span class="key">Ctrl + Click</span></td>
+<td>Open links directly.</td>
+</tr>
+
+<tr>
+<td>Format Painter Lock</td>
+<td><span class="key">Double Click</span></td>
+<td>Reuse same formatting multiple times.</td>
+</tr>
+
+<tr>
+<td>Track Changes</td>
+<td><span class="key">Ctrl + Shift + E</span></td>
+<td>Enable collaboration editing tracking.</td>
+</tr>
+
+<tr>
+<td>Split Window</td>
+<td><span class="key">View → Split</span></td>
+<td>Work on multiple parts of document.</td>
+</tr>
+
+<tr>
+<td>Compare Documents</td>
+<td><span class="key">Review → Compare</span></td>
+<td>Compare 2 documents professionally.</td>
+</tr>
+
+<tr>
+<td>Restrict Editing</td>
+<td><span class="key">Review → Restrict Editing</span></td>
+<td>Prevent unauthorized modifications.</td>
+</tr>
+
+<tr>
+<td>Dark Mode</td>
+<td><span class="key">View → Switch Modes</span></td>
+<td>Enable dark reading experience.</td>
+</tr>
+
+<tr>
+<td>Recover Unsaved File</td>
+<td><span class="key">File → Info → Manage</span></td>
+<td>Recover accidentally closed documents.</td>
+</tr>
+
+<tr>
+<td>Version History</td>
+<td><span class="key">OneDrive Sync</span></td>
+<td>Restore previous versions.</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+🛡 Security Features
+<span class="badge">Protection</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Password Protection</h3>
+
+<ul>
+<li>File → Info → Protect Document</li>
+<li>Add password security</li>
+<li>Prevent unauthorized access</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Digital Signature</h3>
+
+<ul>
+<li>Add verified signatures</li>
+<li>Professional document authentication</li>
+<li>Corporate workflow support</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Watermarks</h3>
+
+<ul>
+<li>Design → Watermark</li>
+<li>Add confidential labels</li>
+<li>Brand identity protection</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Restricted Editing</h3>
+
+<ul>
+<li>Lock formatting</li>
+<li>Allow only comments</li>
+<li>Protect templates</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+👥 Collaboration Features
+<span class="badge">Team Work</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Real-Time Collaboration</h3>
+
+<ul>
+<li>Multiple users editing together</li>
+<li>Cloud synced editing</li>
+<li>Instant updates</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Comments System</h3>
+
+<ul>
+<li>Review → New Comment</li>
+<li>Discuss changes professionally</li>
+<li>Team review workflow</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Share Links</h3>
+
+<ul>
+<li>One-click sharing</li>
+<li>Permission management</li>
+<li>Online collaboration</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Cloud Workflow</h3>
+
+<ul>
+<li>OneDrive integration</li>
+<li>AutoSave</li>
+<li>Access from any device</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+🚀 Productivity Hacks
+<span class="badge">Speed Boost</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Quick Access Toolbar</h3>
+
+<p>
+Add your favorite tools for one-click access and faster workflow.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Templates</h3>
+
+<p>
+Use ready-made professional templates for resumes, reports and invoices.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>AutoCorrect Tricks</h3>
+
+<ul>
+<li>Create custom shortcuts</li>
+<li>Replace long text instantly</li>
+<li>Speed up repetitive typing</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Clipboard History</h3>
+
+<p>
+Press:
+<br><br>
+
+<span class="key">Windows + V</span>
+
+<br><br>
+
+to access copied history.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+📚 Professional Formatting
+<span class="badge">Document Design</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Table of Contents</h3>
+
+<ul>
+<li>Automatic TOC generation</li>
+<li>Professional reports</li>
+<li>Heading-based navigation</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Headers & Footers</h3>
+
+<ul>
+<li>Add branding</li>
+<li>Page numbering</li>
+<li>Professional documents</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Columns & Layouts</h3>
+
+<ul>
+<li>Magazine style pages</li>
+<li>Newsletter designs</li>
+<li>Brochure formatting</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Footnotes & Citations</h3>
+
+<ul>
+<li>Academic documentation</li>
+<li>Research formatting</li>
+<li>Reference management</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="footer">
+
+<h2>
+Microsoft Word Complete Interactive Guide
+</h2>
+
+<br>
+
+<p>
+Advanced responsive portal for Microsoft Word shortcuts, productivity, QR systems, AI tools, automation, security and creative workflows.
+</p>
+
+<br><br>
+
+<p>
+Designed with modern responsive UI, interactive cards, search system and professional dashboard layout.
+</p>
+
+<br><br>
+
+<p>
+© 2026 Microsoft Word Cheat Sheet Portal
+</p>
+
+</div>
+
+</div>
+
+<button
+class="top-btn"
+onclick="window.scrollTo({
+top:0,
+behavior:'smooth'
+})"
+>
+↑
+</button>
+
 <script>
 
-function searchCards(){
+const searchInput =
+document.getElementById('searchInput');
 
-let input =
-document.getElementById('searchInput')
-.value
-.toLowerCase();
+searchInput.addEventListener(
+'keyup',
+function(){
 
-let cards =
-document.querySelectorAll('.searchable');
+let filter =
+this.value.toLowerCase();
 
-cards.forEach(card=>{
+document
+.querySelectorAll('.searchable')
+.forEach(section=>{
 
-if(card.innerText.toLowerCase().includes(input)){
-card.style.display='block';
-}else{
-card.style.display='none';
-}
+let text =
+section.innerText.toLowerCase();
+
+section.style.display =
+text.includes(filter)
+? 'block'
+: 'none';
 
 });
+
+}
+);
+
+function downloadHTML(){
+
+const blob =
+new Blob(
+[document.documentElement.outerHTML],
+{
+type:'text/html'
+}
+);
+
+const a =
+document.createElement('a');
+
+a.href =
+URL.createObjectURL(blob);
+
+a.download =
+'MS_Word_Complete_Guide.html';
+
+a.click();
 
 }
 
