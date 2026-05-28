@@ -1,0 +1,3269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Microsoft Excel Complete Shortcuts & Advanced Tricks Guide
+</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<style>
+
+:root{
+
+--bg:#06110b;
+--card:#0f172a;
+--card2:#111827;
+
+--text:#f8fafc;
+--muted:#94a3b8;
+
+--primary:#16a34a;
+--secondary:#22c55e;
+--accent:#10b981;
+
+--success:#10b981;
+--warning:#f59e0b;
+--danger:#ef4444;
+
+--radius:24px;
+
+--shadow:
+0 10px 40px rgba(0,0,0,.35);
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:'Inter',sans-serif;
+
+background:
+linear-gradient(
+180deg,
+#020617,
+#06110b,
+#071a10
+);
+
+color:var(--text);
+
+overflow-x:hidden;
+
+}
+
+.container{
+
+max-width:1600px;
+
+margin:auto;
+
+padding:25px;
+
+}
+
+.hero{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:30px;
+
+flex-wrap:wrap;
+
+padding:45px;
+
+border-radius:32px;
+
+background:
+linear-gradient(
+135deg,
+rgba(22,163,74,.20),
+rgba(16,185,129,.20)
+);
+
+border:
+1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(12px);
+
+box-shadow:var(--shadow);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.hero::before{
+
+content:'';
+
+position:absolute;
+
+width:600px;
+height:600px;
+
+background:
+radial-gradient(
+circle,
+rgba(255,255,255,.12),
+transparent
+);
+
+top:-250px;
+right:-180px;
+
+}
+
+.logo-wrap{
+
+display:flex;
+
+align-items:center;
+
+gap:22px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.logo{
+
+width:100px;
+height:100px;
+
+border-radius:28px;
+
+background:
+linear-gradient(
+135deg,
+#16a34a,
+#10b981
+);
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+font-size:42px;
+font-weight:800;
+
+box-shadow:
+0 0 35px rgba(16,185,129,.45);
+
+}
+
+.hero h1{
+
+font-size:3.3rem;
+
+line-height:1.1;
+
+margin-bottom:15px;
+
+}
+
+.hero p{
+
+max-width:760px;
+
+line-height:1.9;
+
+font-size:17px;
+
+color:var(--muted);
+
+}
+
+.controls{
+
+display:flex;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+margin-top:25px;
+
+}
+
+.btn{
+
+padding:15px 24px;
+
+border:none;
+
+border-radius:18px;
+
+font-size:15px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.btn-primary{
+
+background:
+linear-gradient(
+135deg,
+#16a34a,
+#10b981
+);
+
+color:white;
+
+}
+
+.btn-secondary{
+
+background:
+rgba(255,255,255,.07);
+
+color:white;
+
+border:
+1px solid rgba(255,255,255,.08);
+
+}
+
+.btn:hover{
+
+transform:
+translateY(-5px);
+
+}
+
+.search-box{
+
+margin:35px 0;
+
+position:sticky;
+
+top:10px;
+
+z-index:999;
+
+}
+
+.search-box input{
+
+width:100%;
+
+padding:20px 25px;
+
+border:none;
+outline:none;
+
+border-radius:20px;
+
+background:
+rgba(255,255,255,.06);
+
+backdrop-filter:blur(10px);
+
+color:white;
+
+font-size:16px;
+
+box-shadow:var(--shadow);
+
+}
+
+.quick-nav{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(180px,1fr));
+
+gap:15px;
+
+margin-bottom:40px;
+
+}
+
+.quick-nav a{
+
+text-decoration:none;
+
+padding:18px;
+
+border-radius:18px;
+
+text-align:center;
+
+font-weight:700;
+
+color:white;
+
+background:
+linear-gradient(
+135deg,
+rgba(22,163,74,.12),
+rgba(16,185,129,.12)
+);
+
+border:
+1px solid rgba(255,255,255,.06);
+
+transition:.3s;
+
+}
+
+.quick-nav a:hover{
+
+transform:
+translateY(-5px);
+
+background:
+linear-gradient(
+135deg,
+#16a34a,
+#10b981
+);
+
+}
+
+.section{
+
+margin-bottom:40px;
+
+background:
+rgba(255,255,255,.04);
+
+border:
+1px solid rgba(255,255,255,.06);
+
+padding:32px;
+
+border-radius:28px;
+
+box-shadow:var(--shadow);
+
+}
+
+.section-title{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+font-size:2rem;
+
+margin-bottom:25px;
+
+}
+
+.badge{
+
+padding:8px 14px;
+
+border-radius:999px;
+
+font-size:13px;
+
+font-weight:700;
+
+background:
+linear-gradient(
+135deg,
+#16a34a,
+#10b981
+);
+
+}
+
+.table-wrap{
+overflow-x:auto;
+}
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+min-width:900px;
+
+}
+
+th,td{
+
+padding:18px;
+
+text-align:left;
+
+border-bottom:
+1px solid rgba(255,255,255,.08);
+
+vertical-align:top;
+
+}
+
+th{
+
+background:
+rgba(255,255,255,.06);
+
+font-size:14px;
+
+text-transform:uppercase;
+
+letter-spacing:1px;
+
+}
+
+tr:hover{
+
+background:
+rgba(255,255,255,.03);
+
+}
+
+.key{
+
+display:inline-block;
+
+padding:10px 16px;
+
+border-radius:12px;
+
+background:
+linear-gradient(
+135deg,
+#052e16,
+#14532d
+);
+
+border:
+1px solid rgba(255,255,255,.08);
+
+font-family:monospace;
+
+font-weight:700;
+
+box-shadow:
+0 0 18px rgba(16,185,129,.18);
+
+}
+
+.formula{
+
+display:block;
+
+padding:16px;
+
+margin-top:15px;
+
+border-radius:16px;
+
+background:
+#052e16;
+
+border:
+1px solid rgba(255,255,255,.08);
+
+font-family:monospace;
+
+font-size:15px;
+
+overflow:auto;
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:22px;
+
+}
+
+.card{
+
+background:
+linear-gradient(
+180deg,
+#0f172a,
+#111827
+);
+
+padding:24px;
+
+border-radius:24px;
+
+border:
+1px solid rgba(255,255,255,.06);
+
+transition:.3s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.card::before{
+
+content:'';
+
+position:absolute;
+
+width:180px;
+height:180px;
+
+background:
+radial-gradient(
+circle,
+rgba(16,185,129,.10),
+transparent
+);
+
+top:-80px;
+right:-80px;
+
+}
+
+.card:hover{
+
+transform:
+translateY(-8px);
+
+}
+
+.card h3{
+
+margin-bottom:15px;
+
+font-size:1.3rem;
+
+position:relative;
+z-index:2;
+
+}
+
+.card p{
+
+line-height:1.8;
+
+color:var(--muted);
+
+position:relative;
+z-index:2;
+
+}
+
+.card ul{
+
+padding-left:20px;
+
+line-height:1.9;
+
+color:var(--muted);
+
+position:relative;
+z-index:2;
+
+}
+
+.tip{
+
+padding:18px;
+
+background:
+rgba(16,185,129,.12);
+
+border-left:
+4px solid var(--success);
+
+border-radius:14px;
+
+margin-top:15px;
+
+line-height:1.8;
+
+color:#d1fae5;
+
+}
+
+.kpi-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+margin-bottom:35px;
+
+}
+
+.kpi-card{
+
+padding:25px;
+
+border-radius:24px;
+
+background:
+linear-gradient(
+135deg,
+rgba(16,185,129,.12),
+rgba(22,163,74,.12)
+);
+
+border:
+1px solid rgba(255,255,255,.06);
+
+box-shadow:var(--shadow);
+
+}
+
+.kpi-card h2{
+
+font-size:2rem;
+
+margin-bottom:10px;
+
+}
+
+.kpi-card p{
+
+color:var(--muted);
+
+}
+
+.footer{
+
+text-align:center;
+
+padding:70px 20px;
+
+color:var(--muted);
+
+}
+
+.top-btn{
+
+position:fixed;
+
+right:25px;
+bottom:25px;
+
+width:60px;
+height:60px;
+
+border:none;
+
+border-radius:50%;
+
+background:
+linear-gradient(
+135deg,
+#16a34a,
+#10b981
+);
+
+color:white;
+
+font-size:24px;
+
+cursor:pointer;
+
+box-shadow:var(--shadow);
+
+}
+
+@media(max-width:768px){
+
+.hero{
+padding:28px;
+}
+
+.hero h1{
+font-size:2.2rem;
+}
+
+.section-title{
+font-size:1.5rem;
+}
+
+.section{
+padding:20px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="hero">
+
+<div class="logo-wrap">
+
+<div class="logo">
+X
+</div>
+
+<div>
+
+<h1>
+Microsoft Excel Complete Shortcuts & Advanced Tricks Guide
+</h1>
+
+<p>
+
+Advanced interactive Microsoft Excel portal with formulas, functions, pivot tables, dashboards, automation, macros, VBA, AI tools, charts, analytics, business templates, financial calculations and productivity systems.
+
+</p>
+
+<div class="controls">
+
+<button
+class="btn btn-primary"
+onclick="window.print()">
+
+Print Cheat Sheet
+
+</button>
+
+<button
+class="btn btn-secondary"
+onclick="downloadHTML()">
+
+Download HTML
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="search-box">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search formulas, shortcuts, pivot tables, charts, macros, AI tools..."
+>
+
+</div>
+
+<div class="quick-nav">
+
+<a href="#basic">
+Basic
+</a>
+
+<a href="#formulas">
+Formulas
+</a>
+
+<a href="#pivot">
+Pivot Tables
+</a>
+
+<a href="#charts">
+Charts
+</a>
+
+<a href="#dashboard">
+Dashboards
+</a>
+
+<a href="#automation">
+Automation
+</a>
+
+<a href="#finance">
+Finance
+</a>
+
+<a href="#advanced">
+Advanced
+</a>
+
+</div>
+
+<div class="kpi-grid">
+
+<div class="kpi-card">
+
+<h2>
+500+
+</h2>
+
+<p>
+Excel Shortcuts & Tricks
+</p>
+
+</div>
+
+<div class="kpi-card">
+
+<h2>
+100+
+</h2>
+
+<p>
+Advanced Formulas
+</p>
+
+</div>
+
+<div class="kpi-card">
+
+<h2>
+50+
+</h2>
+
+<p>
+Automation Workflows
+</p>
+
+</div>
+
+<div class="kpi-card">
+
+<h2>
+25+
+</h2>
+
+<p>
+Business Templates
+</p>
+
+</div>
+
+</div>
+
+<section class="section searchable" id="basic">
+
+<div class="section-title">
+⌨ Excel Basic Shortcuts
+<span class="badge">Core Productivity</span>
+</div>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Feature</th>
+<th>Shortcut</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>New Workbook</td>
+<td><span class="key">Ctrl + N</span></td>
+<td>Create new Excel workbook instantly.</td>
+</tr>
+
+<tr>
+<td>Open Workbook</td>
+<td><span class="key">Ctrl + O</span></td>
+<td>Open saved Excel files.</td>
+</tr>
+
+<tr>
+<td>Save Workbook</td>
+<td><span class="key">Ctrl + S</span></td>
+<td>Save current workbook.</td>
+</tr>
+
+<tr>
+<td>Print</td>
+<td><span class="key">Ctrl + P</span></td>
+<td>Open print settings.</td>
+</tr>
+
+<tr>
+<td>Close Workbook</td>
+<td><span class="key">Ctrl + W</span></td>
+<td>Close active workbook.</td>
+</tr>
+
+<tr>
+<td>Create Table</td>
+<td><span class="key">Ctrl + T</span></td>
+<td>Convert data range into smart table.</td>
+</tr>
+
+<tr>
+<td>Open Find</td>
+<td><span class="key">Ctrl + F</span></td>
+<td>Search within sheet.</td>
+</tr>
+
+<tr>
+<td>Replace Data</td>
+<td><span class="key">Ctrl + H</span></td>
+<td>Replace repeated values quickly.</td>
+</tr>
+
+<tr>
+<td>Insert Current Date</td>
+<td><span class="key">Ctrl + ;</span></td>
+<td>Insert today’s date.</td>
+</tr>
+
+<tr>
+<td>Insert Current Time</td>
+<td><span class="key">Ctrl + Shift + ;</span></td>
+<td>Insert current time.</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+🧭 Navigation Shortcuts
+<span class="badge">Fast Workflow</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Sheet Navigation</h3>
+
+<ul>
+<li><span class="key">Ctrl + Page Up</span> Previous Sheet</li>
+<li><span class="key">Ctrl + Page Down</span> Next Sheet</li>
+<li><span class="key">Ctrl + Home</span> Go to A1</li>
+<li><span class="key">Ctrl + End</span> Last used cell</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Cell Movement</h3>
+
+<ul>
+<li><span class="key">Arrow Keys</span> Move cell</li>
+<li><span class="key">Ctrl + Arrow</span> Jump data edge</li>
+<li><span class="key">Tab</span> Move right</li>
+<li><span class="key">Shift + Tab</span> Move left</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Selection Tricks</h3>
+
+<ul>
+<li><span class="key">Ctrl + A</span> Select all</li>
+<li><span class="key">Ctrl + Shift + Arrow</span> Select data range</li>
+<li><span class="key">Shift + Space</span> Select row</li>
+<li><span class="key">Ctrl + Space</span> Select column</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Zoom Controls</h3>
+
+<ul>
+<li><span class="key">Ctrl + Mouse Wheel</span> Zoom</li>
+<li><span class="key">Alt + W + Q</span> Zoom menu</li>
+<li><span class="key">Freeze Panes</span> Lock rows/columns</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+✏ Cell Editing Shortcuts
+<span class="badge">Editing</span>
+</div>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Feature</th>
+<th>Shortcut</th>
+<th>Usage</th>
+</tr>
+
+<tr>
+<td>Edit Cell</td>
+<td><span class="key">F2</span></td>
+<td>Edit active cell directly.</td>
+</tr>
+
+<tr>
+<td>Copy</td>
+<td><span class="key">Ctrl + C</span></td>
+<td>Copy selected cells.</td>
+</tr>
+
+<tr>
+<td>Paste</td>
+<td><span class="key">Ctrl + V</span></td>
+<td>Paste copied data.</td>
+</tr>
+
+<tr>
+<td>Paste Special</td>
+<td><span class="key">Ctrl + Alt + V</span></td>
+<td>Paste formulas, values or formats.</td>
+</tr>
+
+<tr>
+<td>Undo</td>
+<td><span class="key">Ctrl + Z</span></td>
+<td>Reverse last action.</td>
+</tr>
+
+<tr>
+<td>Redo</td>
+<td><span class="key">Ctrl + Y</span></td>
+<td>Restore action.</td>
+</tr>
+
+<tr>
+<td>Fill Down</td>
+<td><span class="key">Ctrl + D</span></td>
+<td>Copy upper cell downward.</td>
+</tr>
+
+<tr>
+<td>Fill Right</td>
+<td><span class="key">Ctrl + R</span></td>
+<td>Copy left cell rightward.</td>
+</tr>
+
+<tr>
+<td>Delete Row</td>
+<td><span class="key">Ctrl + -</span></td>
+<td>Delete selected rows/cells.</td>
+</tr>
+
+<tr>
+<td>Insert Row</td>
+<td><span class="key">Ctrl + Shift + +</span></td>
+<td>Insert new rows/cells.</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+🎨 Formatting Shortcuts
+<span class="badge">Professional Design</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Font Formatting</h3>
+
+<ul>
+<li><span class="key">Ctrl + B</span> Bold</li>
+<li><span class="key">Ctrl + I</span> Italic</li>
+<li><span class="key">Ctrl + U</span> Underline</li>
+<li><span class="key">Ctrl + 5</span> Strikethrough</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Number Formatting</h3>
+
+<ul>
+<li><span class="key">Ctrl + Shift + $</span> Currency</li>
+<li><span class="key">Ctrl + Shift + %</span> Percentage</li>
+<li><span class="key">Ctrl + Shift + #</span> Date</li>
+<li><span class="key">Ctrl + Shift + @</span> Time</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Alignment</h3>
+
+<ul>
+<li>Center align</li>
+<li>Wrap text</li>
+<li>Merge cells</li>
+<li>Rotate text</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Conditional Formatting</h3>
+
+<ul>
+<li>Highlight duplicates</li>
+<li>Data bars</li>
+<li>Color scales</li>
+<li>Icon sets</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+⚡ Hidden Excel Productivity Tricks
+<span class="badge">Advanced Tricks</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Flash Fill</h3>
+
+<p>
+
+Automatically detect patterns and fill data intelligently.
+
+</p>
+
+<div class="formula">
+Ctrl + E
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Quick Analysis Tool</h3>
+
+<p>
+
+Select data and instantly create charts, totals and formatting.
+
+</p>
+
+<div class="formula">
+Ctrl + Q
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>AutoSum</h3>
+
+<p>
+
+Instantly calculate totals for selected data.
+
+</p>
+
+<div class="formula">
+Alt + =
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Repeat Last Action</h3>
+
+<p>
+
+Repeat formatting or operations quickly.
+
+</p>
+
+<div class="formula">
+F4
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Data Validation Lists</h3>
+
+<p>
+
+Create dropdown menus for clean data entry systems.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Remove Duplicates</h3>
+
+<p>
+
+Data → Remove Duplicates
+
+</p>
+
+<div class="tip">
+Useful for CRM, leads and inventory systems.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable" id="finance">
+
+<div class="section-title">
+💰 Business & Finance Excel Systems
+<span class="badge">Business Use Cases</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Invoice Management</h3>
+
+<ul>
+<li>Auto GST calculation</li>
+<li>Customer database</li>
+<li>Payment tracking</li>
+<li>Invoice printing</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Attendance System</h3>
+
+<ul>
+<li>Employee attendance</li>
+<li>Late tracking</li>
+<li>Leave management</li>
+<li>Shift schedules</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Payroll System</h3>
+
+<ul>
+<li>Salary calculations</li>
+<li>Bonus tracking</li>
+<li>PF/ESI calculations</li>
+<li>Tax deductions</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Inventory Management</h3>
+
+<ul>
+<li>Stock monitoring</li>
+<li>Low stock alerts</li>
+<li>Barcode systems</li>
+<li>Warehouse tracking</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>CRM Dashboard</h3>
+
+<ul>
+<li>Lead management</li>
+<li>Sales tracking</li>
+<li>Client follow-ups</li>
+<li>Revenue analytics</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Financial Reports</h3>
+
+<ul>
+<li>Profit & Loss</li>
+<li>Balance sheets</li>
+<li>Cash flow</li>
+<li>ROI calculations</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+<section class="section searchable" id="formulas">
+
+<div class="section-title">
+🧮 Excel Formulas & Functions Master Guide
+<span class="badge">Advanced Formulas</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>SUM Formula</h3>
+
+<p>
+Add numbers automatically.
+</p>
+
+<div class="formula">
+=SUM(A1:A10)
+</div>
+
+<div class="tip">
+Used for totals, invoices, reports and dashboards.
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>AVERAGE Formula</h3>
+
+<p>
+Calculate average values.
+</p>
+
+<div class="formula">
+=AVERAGE(A1:A10)
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>MAX & MIN</h3>
+
+<p>
+Find highest and lowest values.
+</p>
+
+<div class="formula">
+=MAX(A1:A10)
+
+=MIN(A1:A10)
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>COUNT Formula</h3>
+
+<p>
+Count numeric entries.
+</p>
+
+<div class="formula">
+=COUNT(A1:A100)
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+🧠 Logical Formulas
+<span class="badge">Decision Making</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>IF Formula</h3>
+
+<p>
+Perform logical testing.
+</p>
+
+<div class="formula">
+=IF(A1>=50,"PASS","FAIL")
+</div>
+
+<div class="tip">
+Useful for marksheets and approval systems.
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>IFS Formula</h3>
+
+<p>
+Multiple conditions handling.
+</p>
+
+<div class="formula">
+=IFS(A1>=90,"A+",A1>=75,"A",A1>=50,"B")
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>AND Formula</h3>
+
+<div class="formula">
+=AND(A1>50,B1="YES")
+</div>
+
+<p>
+Checks if all conditions are true.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>OR Formula</h3>
+
+<div class="formula">
+=OR(A1>50,B1="YES")
+</div>
+
+<p>
+Checks if any condition is true.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>NOT Formula</h3>
+
+<div class="formula">
+=NOT(A1>50)
+</div>
+
+<p>
+Reverse logical condition.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+🔍 Lookup Formulas
+<span class="badge">Data Search</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>VLOOKUP</h3>
+
+<p>
+Search vertically in tables.
+</p>
+
+<div class="formula">
+=VLOOKUP(A2,$F$2:$H$100,2,FALSE)
+</div>
+
+<div class="tip">
+Used in billing, inventory and CRM systems.
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>HLOOKUP</h3>
+
+<div class="formula">
+=HLOOKUP(A1,B1:H5,2,FALSE)
+</div>
+
+<p>
+Search horizontally across rows.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>XLOOKUP</h3>
+
+<div class="formula">
+=XLOOKUP(A2,F2:F100,G2:G100)
+</div>
+
+<p>
+Modern replacement of VLOOKUP.</p>
+
+</div>
+
+<div class="card">
+
+<h3>INDEX MATCH</h3>
+
+<div class="formula">
+=INDEX(B2:B10,MATCH(E2,A2:A10,0))
+</div>
+
+<p>
+Advanced flexible lookup system.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+🔤 Text Formulas
+<span class="badge">Text Processing</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>LEFT Formula</h3>
+
+<div class="formula">
+=LEFT(A1,5)
+</div>
+
+<p>
+Extract left-side characters.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>RIGHT Formula</h3>
+
+<div class="formula">
+=RIGHT(A1,4)
+</div>
+
+<p>
+Extract right-side text.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>MID Formula</h3>
+
+<div class="formula">
+=MID(A1,3,5)
+</div>
+
+<p>
+Extract middle text.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>LEN Formula</h3>
+
+<div class="formula">
+=LEN(A1)
+</div>
+
+<p>
+Count total characters.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>CONCAT Formula</h3>
+
+<div class="formula">
+=CONCAT(A1,\" \",B1)
+</div>
+
+<p>
+Combine multiple text values.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>TEXTJOIN Formula</h3>
+
+<div class="formula">
+=TEXTJOIN(\",\",TRUE,A1:A10)
+</div>
+
+<p>
+Merge text with separator.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+📅 Date & Time Formulas
+<span class="badge">Date Analytics</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>TODAY Formula</h3>
+
+<div class="formula">
+=TODAY()
+</div>
+
+<p>
+Display current date automatically.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>NOW Formula</h3>
+
+<div class="formula">
+=NOW()
+</div>
+
+<p>
+Display current date and time.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>DATEDIF Formula</h3>
+
+<div class="formula">
+=DATEDIF(A1,B1,\"Y\")
+</div>
+
+<p>
+Calculate year difference.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>NETWORKDAYS</h3>
+
+<div class="formula">
+=NETWORKDAYS(A1,B1)
+</div>
+
+<p>
+Count working days only.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+💹 Financial Formulas
+<span class="badge">Finance & Accounting</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>EMI Calculator</h3>
+
+<div class="formula">
+=PMT(10%/12,60,-500000)
+</div>
+
+<p>
+Monthly EMI calculation.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Future Value</h3>
+
+<div class="formula">
+=FV(8%/12,60,-5000)
+</div>
+
+<p>
+Investment future value.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Present Value</h3>
+
+<div class="formula">
+=PV(10%,5,-10000)
+</div>
+
+<p>
+Current value of future money.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>CAGR Formula</h3>
+
+<div class="formula">
+=((B2/A2)^(1/C2))-1
+</div>
+
+<p>
+Compound annual growth rate.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>GST Calculation</h3>
+
+<div class="formula">
+=A1*18%
+</div>
+
+<p>
+Automatic GST calculations.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Profit Percentage</h3>
+
+<div class="formula">
+=((Selling-Cost)/Cost)*100
+</div>
+
+<p>
+Calculate business profit margins.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+📊 Analytics & Dynamic Array Formulas
+<span class="badge">Modern Excel</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>COUNTIF</h3>
+
+<div class="formula">
+=COUNTIF(A1:A100,\"YES\")
+</div>
+
+<p>
+Count matching conditions.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>SUMIF</h3>
+
+<div class="formula">
+=SUMIF(A1:A10,\">100\",B1:B10)
+</div>
+
+<p>
+Conditional summation.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>FILTER Formula</h3>
+
+<div class="formula">
+=FILTER(A1:C100,B1:B100=\"YES\")
+</div>
+
+<p>
+Dynamic filtered results.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>UNIQUE Formula</h3>
+
+<div class="formula">
+=UNIQUE(A1:A100)
+</div>
+
+<p>
+Remove duplicate entries dynamically.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>SORT Formula</h3>
+
+<div class="formula">
+=SORT(A1:A100)
+</div>
+
+<p>
+Automatically sort data.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>SEQUENCE Formula</h3>
+
+<div class="formula">
+=SEQUENCE(10)
+</div>
+
+<p>
+Generate automatic number series.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+🤖 AI Features in Excel
+<span class="badge">Artificial Intelligence</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Copilot for Excel</h3>
+
+<ul>
+<li>Generate formulas automatically</li>
+<li>Analyze large datasets</li>
+<li>Create summaries</li>
+<li>Build reports instantly</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Analyze Data</h3>
+
+<ul>
+<li>AI-generated insights</li>
+<li>Trend detection</li>
+<li>Automatic chart recommendations</li>
+<li>Smart business analysis</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Forecast Sheets</h3>
+
+<ul>
+<li>Predict future sales</li>
+<li>Business forecasting</li>
+<li>Growth estimation</li>
+<li>Trend analytics</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Flash Fill AI</h3>
+
+<ul>
+<li>Auto detect patterns</li>
+<li>Split names</li>
+<li>Format phone numbers</li>
+<li>Extract text automatically</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+<section class="section searchable" id="pivot">
+
+<div class="section-title">
+📈 Pivot Tables Master Guide
+<span class="badge">Data Analysis</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Create Pivot Table</h3>
+
+<ul>
+<li>Select dataset</li>
+<li>Insert → Pivot Table</li>
+<li>Choose worksheet location</li>
+<li>Drag fields into rows & columns</li>
+</ul>
+
+<div class="tip">
+Best tool for analyzing large datasets instantly.
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Pivot Table Areas</h3>
+
+<ul>
+<li>Rows</li>
+<li>Columns</li>
+<li>Values</li>
+<li>Filters</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Pivot Table Features</h3>
+
+<ul>
+<li>Dynamic reporting</li>
+<li>Automatic grouping</li>
+<li>Instant totals</li>
+<li>Interactive filtering</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Slicers</h3>
+
+<p>
+Insert interactive filtering buttons for dashboards.
+</p>
+
+<div class="formula">
+Insert → Slicer
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Pivot Charts</h3>
+
+<p>
+Generate live charts connected with pivot tables.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Calculated Fields</h3>
+
+<p>
+Create custom calculations inside pivot tables.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable" id="dashboard">
+
+<div class="section-title">
+📊 Excel Dashboards
+<span class="badge">Business Intelligence</span>
+</div>
+
+<div class="kpi-grid">
+
+<div class="kpi-card">
+
+<h2>
+₹12.5L
+</h2>
+
+<p>
+Monthly Revenue
+</p>
+
+</div>
+
+<div class="kpi-card">
+
+<h2>
++28%
+</h2>
+
+<p>
+Growth Rate
+</p>
+
+</div>
+
+<div class="kpi-card">
+
+<h2>
+1,250
+</h2>
+
+<p>
+Total Customers
+</p>
+
+</div>
+
+<div class="kpi-card">
+
+<h2>
+92%
+</h2>
+
+<p>
+Target Achievement
+</p>
+
+</div>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Sales Dashboard</h3>
+
+<ul>
+<li>Revenue tracking</li>
+<li>Monthly growth</li>
+<li>Salesperson performance</li>
+<li>Regional analytics</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>HR Dashboard</h3>
+
+<ul>
+<li>Attendance analytics</li>
+<li>Employee performance</li>
+<li>Leave management</li>
+<li>Payroll summaries</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Inventory Dashboard</h3>
+
+<ul>
+<li>Low stock alerts</li>
+<li>Warehouse analytics</li>
+<li>Product movement</li>
+<li>Supplier tracking</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>CRM Dashboard</h3>
+
+<ul>
+<li>Lead tracking</li>
+<li>Sales funnel</li>
+<li>Client follow-ups</li>
+<li>Conversion analytics</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Finance Dashboard</h3>
+
+<ul>
+<li>Profit & Loss</li>
+<li>Cash flow tracking</li>
+<li>Expense analytics</li>
+<li>ROI reports</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>KPI Dashboard</h3>
+
+<ul>
+<li>Performance metrics</li>
+<li>Targets vs achievement</li>
+<li>Trend visualization</li>
+<li>Interactive slicers</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable" id="charts">
+
+<div class="section-title">
+📉 Charts & Visualization
+<span class="badge">Professional Reports</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Column Charts</h3>
+
+<p>
+Best for sales and comparison reports.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Pie Charts</h3>
+
+<p>
+Visualize percentage distribution.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Line Charts</h3>
+
+<p>
+Perfect for trends and growth analysis.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Bar Charts</h3>
+
+<p>
+Horizontal comparisons and rankings.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Area Charts</h3>
+
+<p>
+Track cumulative business growth.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Combo Charts</h3>
+
+<p>
+Combine multiple chart types together.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Chart Creation Steps</h3>
+
+<ul>
+<li>Select dataset</li>
+<li>Insert → Charts</li>
+<li>Select chart type</li>
+<li>Customize design</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Chart Design Tips</h3>
+
+<ul>
+<li>Use proper labels</li>
+<li>Apply color consistency</li>
+<li>Highlight KPIs</li>
+<li>Use slicers for interactivity</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+🎨 Conditional Formatting
+<span class="badge">Smart Highlighting</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Highlight Duplicates</h3>
+
+<p>
+Automatically identify duplicate values.
+</p>
+
+<div class="formula">
+Home → Conditional Formatting → Duplicate Values
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Data Bars</h3>
+
+<p>
+Visualize value size inside cells.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Color Scales</h3>
+
+<p>
+Create heatmap style reports.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Icon Sets</h3>
+
+<p>
+Traffic lights, arrows and KPI indicators.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Formula-Based Rules</h3>
+
+<div class="formula">
+=A1>1000
+</div>
+
+<p>
+Highlight cells dynamically.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Top/Bottom Analysis</h3>
+
+<p>
+Highlight top 10 values or lowest performers.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+📋 Data Validation Systems
+<span class="badge">Smart Data Entry</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Dropdown Lists</h3>
+
+<p>
+Create professional dropdown menus.
+</p>
+
+<div class="formula">
+Data → Data Validation → List
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Restrict Invalid Data</h3>
+
+<ul>
+<li>Allow only numbers</li>
+<li>Restrict dates</li>
+<li>Limit text length</li>
+<li>Prevent errors</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Dependent Dropdowns</h3>
+
+<p>
+Dynamic dropdowns based on previous selection.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Input Messages</h3>
+
+<p>
+Show instructions during data entry.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Error Alerts</h3>
+
+<p>
+Display warning when invalid data is entered.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Professional Forms</h3>
+
+<p>
+Create interactive Excel forms using validation.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+⚡ Power Query & Data Cleaning
+<span class="badge">Automation</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Power Query</h3>
+
+<ul>
+<li>Import data automatically</li>
+<li>Transform datasets</li>
+<li>Merge files</li>
+<li>Automate reporting</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Remove Duplicates</h3>
+
+<p>
+Automatically clean duplicate entries.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Split Columns</h3>
+
+<p>
+Separate full names, addresses and values.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Merge Queries</h3>
+
+<p>
+Combine multiple tables and files together.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Refresh Data</h3>
+
+<div class="formula">
+Ctrl + Alt + F5
+</div>
+
+<p>
+Update connected datasets instantly.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Data Transformation</h3>
+
+<ul>
+<li>Trim spaces</li>
+<li>Convert formats</li>
+<li>Normalize data</li>
+<li>Business cleaning workflows</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+📦 Excel Business Templates
+<span class="badge">Ready Systems</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Invoice Template</h3>
+
+<ul>
+<li>GST invoices</li>
+<li>Auto totals</li>
+<li>Customer database</li>
+<li>Payment tracking</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Attendance Tracker</h3>
+
+<ul>
+<li>Daily attendance</li>
+<li>Leave calculations</li>
+<li>Late marking</li>
+<li>Monthly reports</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Inventory Management</h3>
+
+<ul>
+<li>Stock tracking</li>
+<li>Barcode support</li>
+<li>Low stock alerts</li>
+<li>Supplier management</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Payroll System</h3>
+
+<ul>
+<li>Salary sheets</li>
+<li>Tax calculations</li>
+<li>Bonus reports</li>
+<li>PF/ESI tracking</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>CRM System</h3>
+
+<ul>
+<li>Lead management</li>
+<li>Sales pipeline</li>
+<li>Follow-up reminders</li>
+<li>Conversion tracking</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Project Tracker</h3>
+
+<ul>
+<li>Task management</li>
+<li>Deadline tracking</li>
+<li>Progress analytics</li>
+<li>Team productivity</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+<section class="section searchable" id="automation">
+
+<div class="section-title">
+🤖 VBA & Macro Automation
+<span class="badge">Automation Systems</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Enable Developer Tab</h3>
+
+<ul>
+<li>File → Options</li>
+<li>Customize Ribbon</li>
+<li>Enable Developer</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Record Macro</h3>
+
+<ul>
+<li>Developer → Record Macro</li>
+<li>Perform repetitive task</li>
+<li>Stop recording</li>
+<li>Replay instantly</li>
+</ul>
+
+<div class="formula">
+Alt + F8
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Open VBA Editor</h3>
+
+<div class="formula">
+Alt + F11
+</div>
+
+<p>
+Create advanced automation scripts.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Macro Benefits</h3>
+
+<ul>
+<li>Automate reports</li>
+<li>Generate invoices</li>
+<li>Email automation</li>
+<li>Reduce manual work</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Business Automation</h3>
+
+<ul>
+<li>Attendance systems</li>
+<li>Payroll automation</li>
+<li>Inventory updates</li>
+<li>CRM workflows</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>VBA Example</h3>
+
+<div class="formula">
+Sub Hello()
+
+MsgBox \"Welcome to Excel VBA\"
+
+End Sub
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+🧠 Advanced Excel AI Features
+<span class="badge">Modern Excel</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Copilot AI</h3>
+
+<ul>
+<li>Generate formulas automatically</li>
+<li>Create dashboards</li>
+<li>Summarize reports</li>
+<li>Analyze trends</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Forecasting</h3>
+
+<ul>
+<li>Predict future sales</li>
+<li>Growth forecasting</li>
+<li>Trend analytics</li>
+<li>Business prediction models</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Analyze Data Tool</h3>
+
+<ul>
+<li>AI insights</li>
+<li>Automatic charts</li>
+<li>Pattern detection</li>
+<li>Data recommendations</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Power BI Integration</h3>
+
+<ul>
+<li>Advanced dashboards</li>
+<li>Live analytics</li>
+<li>Enterprise reporting</li>
+<li>Cloud business intelligence</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+🔒 Security & Protection
+<span class="badge">Data Security</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Password Protection</h3>
+
+<ul>
+<li>Encrypt workbook</li>
+<li>Restrict access</li>
+<li>Secure business data</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Protect Sheets</h3>
+
+<ul>
+<li>Lock formulas</li>
+<li>Prevent editing</li>
+<li>Protect important cells</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Hide Formulas</h3>
+
+<ul>
+<li>Secure calculations</li>
+<li>Protect business logic</li>
+<li>Prevent formula copying</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Backup & Recovery</h3>
+
+<ul>
+<li>AutoRecover</li>
+<li>Version history</li>
+<li>Cloud backup</li>
+<li>OneDrive sync</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+👥 Collaboration Features
+<span class="badge">Team Workflow</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Real-Time Collaboration</h3>
+
+<ul>
+<li>Multiple users editing</li>
+<li>Cloud synchronization</li>
+<li>Live updates</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Comments & Notes</h3>
+
+<ul>
+<li>Discuss cells</li>
+<li>Team review system</li>
+<li>Professional workflow</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Share Workbooks</h3>
+
+<ul>
+<li>Generate share links</li>
+<li>Permission controls</li>
+<li>Online access</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Track Changes</h3>
+
+<ul>
+<li>Monitor edits</li>
+<li>Review modifications</li>
+<li>Audit workflow</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+🚀 Advanced Productivity Hacks
+<span class="badge">Expert Tricks</span>
+</div>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Feature</th>
+<th>Shortcut</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>AutoSum</td>
+<td><span class="key">Alt + =</span></td>
+<td>Quick total calculations.</td>
+</tr>
+
+<tr>
+<td>Repeat Last Action</td>
+<td><span class="key">F4</span></td>
+<td>Repeat previous command.</td>
+</tr>
+
+<tr>
+<td>New Line in Cell</td>
+<td><span class="key">Alt + Enter</span></td>
+<td>Create line break inside cell.</td>
+</tr>
+
+<tr>
+<td>Show Formulas</td>
+<td><span class="key">Ctrl + `</span></td>
+<td>Display all formulas.</td>
+</tr>
+
+<tr>
+<td>Filter Data</td>
+<td><span class="key">Ctrl + Shift + L</span></td>
+<td>Enable or disable filters.</td>
+</tr>
+
+<tr>
+<td>Open Name Manager</td>
+<td><span class="key">Ctrl + F3</span></td>
+<td>Manage named ranges.</td>
+</tr>
+
+<tr>
+<td>Insert Chart</td>
+<td><span class="key">Alt + F1</span></td>
+<td>Create instant chart.</td>
+</tr>
+
+<tr>
+<td>Format Cells</td>
+<td><span class="key">Ctrl + 1</span></td>
+<td>Open formatting options.</td>
+</tr>
+
+<tr>
+<td>Refresh Data</td>
+<td><span class="key">Ctrl + Alt + F5</span></td>
+<td>Refresh external data sources.</td>
+</tr>
+
+<tr>
+<td>Calculate Workbook</td>
+<td><span class="key">F9</span></td>
+<td>Recalculate formulas.</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<section class="section searchable">
+
+<div class="section-title">
+📚 Professional Excel Use Cases
+<span class="badge">Industry Solutions</span>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Accounting</h3>
+
+<ul>
+<li>GST reports</li>
+<li>Balance sheets</li>
+<li>Tax calculations</li>
+<li>Cash flow analysis</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Business Analytics</h3>
+
+<ul>
+<li>KPI dashboards</li>
+<li>Sales forecasting</li>
+<li>Revenue analysis</li>
+<li>Profit optimization</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>HR Management</h3>
+
+<ul>
+<li>Attendance sheets</li>
+<li>Payroll systems</li>
+<li>Employee databases</li>
+<li>Performance reports</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Education Systems</h3>
+
+<ul>
+<li>Marksheets</li>
+<li>Student databases</li>
+<li>Result automation</li>
+<li>Fee management</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Retail & Inventory</h3>
+
+<ul>
+<li>Stock tracking</li>
+<li>Barcode systems</li>
+<li>Purchase management</li>
+<li>Supplier reports</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>Project Management</h3>
+
+<ul>
+<li>Task tracking</li>
+<li>Gantt charts</li>
+<li>Deadline monitoring</li>
+<li>Resource allocation</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="footer">
+
+<h2>
+Microsoft Excel Complete Interactive Guide
+</h2>
+
+<br>
+
+<p>
+
+Advanced responsive portal for Excel shortcuts, formulas, dashboards, pivot tables, VBA automation, AI tools, analytics and professional business workflows.
+
+</p>
+
+<br><br>
+
+<p>
+
+Includes:
+<br><br>
+
+• Advanced formulas  
+• Business templates  
+• Dashboard systems  
+• Automation workflows  
+• VBA & Macros  
+• AI-powered analytics  
+• Interactive UI  
+• Financial calculations  
+• Productivity hacks  
+• Enterprise reporting  
+
+</p>
+
+<br><br>
+
+<p>
+© 2026 Excel Advanced Learning Portal
+</p>
+
+</div>
+
+</div>
+
+<button
+class="top-btn"
+onclick="window.scrollTo({
+top:0,
+behavior:'smooth'
+})"
+>
+↑
+</button>
+
+<script>
+
+const searchInput =
+document.getElementById('searchInput');
+
+searchInput.addEventListener(
+'keyup',
+function(){
+
+let filter =
+this.value.toLowerCase();
+
+document
+.querySelectorAll('.searchable')
+.forEach(section=>{
+
+let text =
+section.innerText.toLowerCase();
+
+section.style.display =
+text.includes(filter)
+? 'block'
+: 'none';
+
+});
+
+}
+);
+
+function downloadHTML(){
+
+const blob =
+new Blob(
+[document.documentElement.outerHTML],
+{
+type:'text/html'
+}
+);
+
+const a =
+document.createElement('a');
+
+a.href =
+URL.createObjectURL(blob);
+
+a.download =
+'MS_Excel_Complete_Guide.html';
+
+a.click();
+
+}
+
+</script>
+
+</body>
+</html>
